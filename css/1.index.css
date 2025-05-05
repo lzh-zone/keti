@@ -1,0 +1,457 @@
+/* 清除默认边距 */
+*{  /* 全局选择器 */
+    margin: 0;
+    padding: 0;
+}
+/* 清除a标签默认样式 */
+a{
+    text-decoration: none;
+    color: #101111ce;
+}
+/* 以下代码保证了在页面缩小时不会因元素的浮动而造成元素变形 */
+body{
+    width: 1500px;
+    margin: 0 auto;
+    height: 1160px;
+    min-width: 1200px;
+}
+
+
+
+.header{  /* 类选择器 */
+    position: relative;  /* 子元素加了绝对定位，则父元素一般加相对定位 */
+    width: 100%;
+    height: 118px;
+    background: url(../images/header_background.jpg) no-repeat;  /* 加背景图片 */
+    background-size: 100% 100%;  /* 设置背景图片所占标签大小 */
+    margin-top: 10px;
+    border-bottom: 5px solid #fd7d02
+}
+.header img{
+    position: absolute;  /* 加了定位以后脱离文档流，则需要使用top和left等属性来调整控件所在位置 */
+    top: 1%;
+    left: 8%;
+}
+.header .teamtitle p{
+    font-size: 30px;
+    font-family: 楷体;
+    color: white;  /* 字体颜色 */
+    float: left;
+    margin: 3% 0px 0 17%;
+}
+.header .school{
+    font-size: 14px;
+    font-family: 微软雅黑;
+    color: white;  /* 字体颜色 */
+    float: right;
+    margin: 4% 11% 0 0;
+}
+.header .school a{
+    color: white;
+    cursor: pointer;  /* 改变鼠标符号 */
+    float: left;
+}
+.header .school a:hover{  /* 鼠标悬浮于控件上时的效果 */
+    border-bottom: 1px solid white;
+}
+.header .school p{
+    color: white;
+    float: left;
+    margin: 0 3px;
+}
+
+
+
+/* 导航栏整体样式 */
+.nav {
+    width: 80%;
+    height: 39px;
+    margin: 0 auto;
+    background-color: #2f72c0;
+    position: relative; /* 相对定位，用于子元素的绝对定位参考 */
+}
+
+/* 导航栏列表样式 */
+.nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 导航栏列表项样式 */
+.nav li {
+    text-align: center;
+    font-size: 15px;
+    font-family: 微软雅黑;
+    height: 39px;
+    width: 15%;
+    line-height: 39px;
+    transition: background-color 0.3s ease; /* 过渡效果，使颜色变化更平滑 */
+    position: relative; /* 相对定位，用于子菜单的绝对定位参考 */
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+/* 导航栏链接样式 */
+.nav li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0 1px;
+}
+
+/* 鼠标悬停时导航栏列表项样式 */
+.nav li:hover {
+    background-color: #0a5894;
+}
+
+/* 下拉菜单样式 */
+.nav .down_list ul {
+    display: none; /* 初始状态下隐藏下拉菜单 */
+    position: absolute;
+    top: 100%; /* 下拉菜单显示在父元素下方 */
+    left: 0;
+    z-index: 99999;
+    background-color: #2f72c0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+}
+
+/* 下拉菜单列表项样式 */
+.nav .down_list ul li {
+    height: 39px;
+    width: 100%;
+    opacity: 1;
+    transition: background-color 0.3s ease;
+    margin: 0;
+}
+
+/* 鼠标悬停时下拉菜单列表项样式 */
+.nav .down_list ul li:hover {
+    background-color: #0a5894;
+}
+
+/* 鼠标悬停时显示下拉菜单 */
+.nav .down_list:hover ul {
+    display: block;
+}
+
+/* 吸顶效果 */
+.nav.fix {
+    position: fixed;
+    z-index: 99999;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 80%;
+    border-bottom: 2px solid #fd7d02;
+    animation: searchTop 0.5s ease-in-out;
+}
+
+/* 吸顶动画 */
+@keyframes searchTop {
+    0% {
+        top: -50px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+/* 导航栏下方内容的间距 */
+.nav2 {
+    margin-top: 60px;
+    z-index: 99999;
+}
+
+
+
+.all_title{
+    display: grid;  
+    grid-template-columns: 1fr 1fr; /* 创建两列，每列占据可用空间的一部分 */  
+}
+
+.homepage_title{
+    width: 82%;
+    height: 30px;
+    margin: 3.4% 0 0 20%;
+    border-bottom: 1px solid gray;
+}
+.homepage_title p{
+    width: 8%;
+    height: 29px;
+    border-bottom: 2px solid blue;
+}
+
+.about_us{
+    width: 77%;
+    height: 30px;
+    margin: 3.4% 0 0 3%;
+    border-bottom: 1px solid gray;
+}
+.about_us p{
+    width: 13%;
+    height: 30px;
+    border-bottom: 2px solid blue;
+    white-space:nowrap;
+}
+
+.news{
+    width: 82%;
+    height: 30px;
+    margin: 5% 0 0 20%;
+    border-bottom: 1px solid gray;
+}
+.news p{
+    width: 7%;
+    height: 29px;
+    border-bottom: 2px solid blue;
+}
+
+
+
+.big_content{
+    display: flex;
+}
+
+/* 外层盒子样式,左右箭头和小圆点都要采用绝对定位，所以其父盒子要采用相对定位*/
+.bannersall li{
+    list-style: none;
+}
+.banners {
+    position: relative;
+    left: 0;
+    overflow: hidden;
+    width: 40%;
+    height: 384px;
+    margin: 4px 0 5px 10%;
+}
+/*滚动区 包裹所有图片的盒子 宽度要足够宽可以放下所有的图片*/
+.images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 700%;
+}
+/* 对图片使用浮动 使其排列在一行*/
+.images li{
+    float: left;
+}
+/* 图片大小会撑大盒子,设置图片大小 */
+.banners img {
+    width: 600px;
+    height: 384px;
+}
+/*左右箭头相同样式*/
+.prev,
+.next {
+    display: none;
+    position: absolute;  
+    /* 绝对定位的盒子垂直居中 */
+    top: 50%;
+    margin-top: -15px;
+    width: 20px;
+    height: 30px;
+    background: rgba(0,0,0, .3);
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    text-decoration: none; 
+}
+/*左箭头靠左定位*/
+.prev {
+    left: 0;
+     /* 设置圆角 */
+     border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+/*右箭头靠右定位*/
+.next {
+    right: 0;
+    /* 设置圆角 */
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+/* 小圆点外层盒子的样式 */
+.dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -35px;
+    height: 13px;
+    background:rgba(255,255,255, .3);
+    border-radius:7px;
+}
+/* 小圆点样式*/
+.dots li {
+    float: left;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 3px;
+}
+/* 小圆点被点击的样式 */
+.dots .active {
+    background-color: #ff5000;
+}
+
+
+
+.about_us_content {
+    position: relative;
+    right:0;
+    width: 39%;
+    height: 384px;
+    margin: 2% 0 0 2%;
+    text-indent: 32px;
+}
+.about_us_content p{
+    margin-bottom: 20px;
+    line-height: 25px;
+}
+
+.content{
+    width: 80%;
+    height: 250px;
+    /* background-color: antiquewhite; */
+    margin: 0 auto;
+}
+.content .name{
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    /* background: linear-gradient(to bottom,#979da2,#f6f6f7); */
+}
+.content .pic{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 257px;
+    text-align: center;
+}
+.content .pic img{
+    width: 200px;
+}
+.content p{
+    color: #979da2;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 宋体;
+    margin: 0px 0px 10px 15px;
+    line-height: 25px;
+}
+.content h3{
+    color: black;
+    font-family: "Lato", sans-serif;
+    font-weight: 1200;
+    font-size: 24px;
+    font-family: 宋体;
+    margin: 40px 0px 20px 10px;
+}
+.content h4{
+    color: black;
+    font-family: "Lato", sans-serif;
+    font-weight: 1000;
+    font-size: 20px;
+    font-family: 宋体;
+    margin: 40px 0px 20px 10px;
+}
+.content a{
+    color:#0896fe;
+}
+.content .name .Liu{
+    font-size: 24px;
+    font-weight: 1500;
+    margin-left: 15px;
+    color: black;
+    margin: 10px 0px 10px 10px;
+}
+.content .job{
+    margin: 0px 0px 20px 15px;
+}
+.content .article{
+    color:black;
+}
+
+
+
+.new__ a{
+    display: flex;  /* 将其变为块级元素 */
+    width: 100%;
+    height: 10px;
+    margin: 0px 0 5px 0;
+    padding-left: 11px;
+    font-size: 13px;
+    font-family: 微软雅黑;
+    /* text-indent: 3mm;  给文字加首行缩进 */
+    color: #5c5c5c;
+}
+.new__ a:hover{
+    color: #0896fe;
+    transition: .5s;
+}
+.new__ li{
+    list-style:disc;
+    margin: 0px 0 7px 35px;
+    height: 20px;
+    width: 600px;
+    background-color: #ffffff;
+    text-align:left;
+    line-height: 40px;
+    border-bottom: 1px dashed #eee;
+}
+.new__ p{
+    width: 400px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* overflow: hidden; */
+    title:ds;
+}
+.new__ span{
+    margin-left: 13%;
+    color: #c3c3c3;
+}
+
+
+
+.tail {
+    width: 100%;
+    background-color: #326aab;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 37px 0 20px 0;
+    display: flex; /* 使用 flexbox 布局 */
+    justify-content: space-between; /* 子元素左右排列 */
+    align-items: flex-start; /* 子元素顶部对齐 */
+}
+
+.logo {
+    flex: 0 0 auto; /* 不伸缩 */
+    margin-left: 7%; /* 左边距 */
+    margin-top: -10px;
+}
+
+.info {
+    flex: 1; /* 自动填充剩余空间 */
+    display: flex;
+    flex-direction: column; /* 子元素从上到下排列 */
+    color: white;
+    font-family: "Lato", sans-serif, 微软雅黑;
+    font-size: 13px;
+    margin-right: 10%; /* 右边距 */
+}
+
+.info p {
+    margin-bottom: 10px; /* 段落之间的间距 */
+    margin-left: 7%;
+}
+
+.info a {
+    color: white;
+    text-decoration: none;
+    margin-left: 7%;
+}

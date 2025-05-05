@@ -1,0 +1,366 @@
+/* 清除默认边距 */
+*{  /* 全局选择器 */
+    margin: 0;
+    padding: 0;
+}
+/* 清除a标签默认样式 */
+a{
+    text-decoration: none;
+    color: #101111ce;
+}
+/* 以下代码保证了在页面缩小时不会因元素的浮动而造成元素变形 */
+body{
+    width: 1500px;
+    margin: 0 auto;
+    height: 800px;
+    min-width: 1200px;
+}
+
+
+
+.header{  /* 类选择器 */
+    position: relative;  /* 子元素加了绝对定位，则父元素一般加相对定位 */
+    width: 100%;
+    height: 118px;
+    background: url(../images/header_background.jpg) no-repeat;  /* 加背景图片 */
+    background-size: 100% 100%;  /* 设置背景图片所占标签大小 */
+    margin-top: 10px;
+    border-bottom: 5px solid #fd7d02
+}
+.header img{
+    position: absolute;  /* 加了定位以后脱离文档流，则需要使用top和left等属性来调整控件所在位置 */
+    top: 1%;
+    left: 8%;
+}
+.header .teamtitle p{
+    font-size: 30px;
+    font-family: 楷体;
+    color: white;  /* 字体颜色 */
+    float: left;
+    margin: 3% 0px 0 17%;
+}
+.header .school{
+    font-size: 14px;
+    font-family: 微软雅黑;
+    color: white;  /* 字体颜色 */
+    float: right;
+    margin: 4% 11% 0 0;
+}
+.header .school a{
+    color: white;
+    cursor: pointer;  /* 改变鼠标符号 */
+    float: left;
+}
+.header .school a:hover{  /* 鼠标悬浮于控件上时的效果 */
+    border-bottom: 1px solid white;
+}
+.header .school p{
+    color: white;
+    float: left;
+    margin: 0 3px;
+}
+
+
+
+/* 导航栏整体样式 */
+.nav {
+    width: 80%;
+    height: 39px;
+    margin: 0 auto;
+    background-color: #2f72c0;
+    position: relative; /* 相对定位，用于子元素的绝对定位参考 */
+}
+
+/* 导航栏列表样式 */
+.nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 导航栏列表项样式 */
+.nav li {
+    text-align: center;
+    font-size: 15px;
+    font-family: 微软雅黑;
+    height: 39px;
+    width: 15%;
+    line-height: 39px;
+    transition: background-color 0.3s ease; /* 过渡效果，使颜色变化更平滑 */
+    position: relative; /* 相对定位，用于子菜单的绝对定位参考 */
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+/* 导航栏链接样式 */
+.nav li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0 1px;
+}
+
+/* 鼠标悬停时导航栏列表项样式 */
+.nav li:hover {
+    background-color: #0a5894;
+}
+
+/* 下拉菜单样式 */
+.nav .down_list ul {
+    display: none; /* 初始状态下隐藏下拉菜单 */
+    position: absolute;
+    top: 100%; /* 下拉菜单显示在父元素下方 */
+    left: 0;
+    z-index: 99999;
+    background-color: #2f72c0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+}
+
+/* 下拉菜单列表项样式 */
+.nav .down_list ul li {
+    height: 39px;
+    width: 100%;
+    opacity: 1;
+    transition: background-color 0.3s ease;
+    margin: 0;
+}
+
+/* 鼠标悬停时下拉菜单列表项样式 */
+.nav .down_list ul li:hover {
+    background-color: #0a5894;
+}
+
+/* 鼠标悬停时显示下拉菜单 */
+.nav .down_list:hover ul {
+    display: block;
+}
+
+/* 吸顶效果 */
+.nav.fix {
+    position: fixed;
+    z-index: 99999;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 80%;
+    border-bottom: 2px solid #fd7d02;
+    animation: searchTop 0.5s ease-in-out;
+}
+
+/* 吸顶动画 */
+@keyframes searchTop {
+    0% {
+        top: -50px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+/* 导航栏下方内容的间距 */
+.nav2 {
+    margin-top: 60px;
+    z-index: 99999;
+}
+
+
+.content{
+    width: 80%;
+    height: 750px;
+    /* background-color: antiquewhite; */
+    margin: 0 auto;
+}
+.content-long{
+    width: 80%;
+    height: 1250px;
+    /* background-color: antiquewhite; */
+    margin: 0 auto;
+}
+.content .title{
+    position: absolute;
+    top: 160px;
+    width: 1200px;
+    height: 55px;
+    line-height: 55px;
+    border-bottom: 2px solid #ffb64d;
+    font-size: 15px;
+    z-index: 3;
+}
+.content img{
+    position: absolute;
+    margin-top: 19px;
+    margin-left: 15px;
+}
+.content .main{
+    margin-left: 44px;
+    color: #999999;
+}
+.content span{
+    color: #999999;
+}
+.content a{
+    color: #0b6cb8;
+}
+.content li{
+    list-style: none;
+    margin: 7px 0 7px 0;
+    height: 53px;
+    width: 230px;
+    background-color: #f5f6fa;
+    text-align: center;
+    line-height: 53px;
+}
+.content .recruit{
+    height: 53px;
+    width: 230px;
+    margin-top: 76px;
+    line-height: 53px;
+    text-align: center;
+    font-family: 微软雅黑;
+    background: url(../images/content_background.png) no-repeat 0 0;
+    color: white;
+    font-size: 20px;
+}
+.content li a{
+    display: block;
+    color: #666666;
+    transition: .3s;
+}
+.content li a:hover{
+    background-color: #0b6cb8;
+    color: white;
+}
+.content .main_content .left li .selected{
+    display: block;
+    color: white;
+    background-color: #0b6cb8;
+    transition: .3s;
+}
+
+
+
+.content .main_content{
+    position:absolute;
+    width: 79%;
+    z-index: 0;
+}
+.content .main_content .right{
+    position: absolute;
+    top: 90px;
+    left: 240px;
+    /* background-color: #fd7d02; */
+}
+
+.content .main_content .right .top{
+    width: 113%;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    border-bottom: 1px dashed #eee;
+    border-left: 1px dashed #eee;
+}
+.content .main_content .right .h2{
+    font-size: 24px;
+    font-family: 楷体;
+    font-weight: normal;
+}
+
+.content .main_content .right .bottom{
+    width: 113%;
+    height: 500px;
+    border-left: 1px dashed #eee;
+}
+.content .main_content .right .bottom a{
+    display: block;  /* 将其变为块级元素 */
+    width: 100%;
+    height: 100px;
+    margin: 8px 0 5px 0;
+    padding-left: 11px;
+    font-size: 21px;
+    font-family: 微软雅黑;
+    text-indent: 3mm;  /* 给文字加首行缩进 */
+    line-height: 38px;  /* 行间距 */
+    color: #666666;
+}
+.content .main_content .right .bottom a:hover{
+    color: #63b1f5;
+    transition: .5s;
+}
+
+.content .main_content .right .bottom .zhaosheng{
+    font-size: 21px;
+    text-indent:42px;
+    line-height: 44px;
+    margin-left: 2%;
+    width: 960px;
+}
+
+.right{
+    z-index: 999;
+}
+
+/* 吸顶效果 */
+.leffix{
+    position:fixed;
+    z-index: 0;
+    top:25px;
+    width:80%;
+    animation: searchTop_ 0.5s ease-in-out;
+}
+
+@keyframes searchTop_{
+    0%{
+        top:-50px;
+    }
+    100%{
+        top: 35px;
+    }
+}
+
+.nav2{
+    margin-top: 60px;
+    z-index: 99999;
+}
+
+
+
+.tail {
+    width: 100%;
+    background-color: #326aab;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 37px 0 20px 0;
+    display: flex; /* 使用 flexbox 布局 */
+    justify-content: space-between; /* 子元素左右排列 */
+    align-items: flex-start; /* 子元素顶部对齐 */
+}
+
+.logo {
+    flex: 0 0 auto; /* 不伸缩 */
+    margin-left: 7%; /* 左边距 */
+    margin-top: -10px;
+}
+
+.info {
+    flex: 1; /* 自动填充剩余空间 */
+    display: flex;
+    flex-direction: column; /* 子元素从上到下排列 */
+    color: white;
+    font-family: "Lato", sans-serif, 微软雅黑;
+    font-size: 13px;
+    margin-right: 10%; /* 右边距 */
+}
+
+.info p {
+    margin-bottom: 10px; /* 段落之间的间距 */
+    margin-left: 7%;
+}
+
+.info a {
+    color: white;
+    text-decoration: none;
+    margin-left: 7%;
+}
