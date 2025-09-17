@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浙江理工大学——课余生活</title>
+    <link rel="icon" href="images/logo_24x24.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo_24x24.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/2.news.css">
+    <!-- Masonry.js & PhotoSwipe CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">
+    <style>
+        .main_content {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .left {
+            width: 200px;
+            min-width: 200px;
+            margin-right: 32px;
+        }
+        .right {
+            flex: 1;
+            min-width: 0;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            width: calc(33.33% - 16px);
+            margin-bottom: 24px;
+            cursor: pointer;
+            position: relative;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 200px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 160px;
+            object-fit: contain;
+            background: #fff;
+            display: block;
+            margin: 0 auto;
+        }
+        .gallery-caption {
+            text-align: center;
+            margin: 12px 0 12px 0;
+            font-size: 15px;
+            color: #555;
+            word-break: break-all;
+        }
+        .gallery-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 32px 0 0 0;
+            gap: 16px;
+        }
+        .gallery-pagination button {
+            padding: 8px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            background: #0078d7;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .gallery-pagination button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        @media (max-width: 900px) {
+            .main_content { flex-direction: column; align-items: stretch; }
+            .left { width: 100%; min-width: 0; margin-right: 0; margin-bottom: 24px; margin-top: 0; }
+            .gallery-item { width: 100%; }
+        }
+        /* .tail样式恢复原样 */
+    </style>
+</head>
+<body>
+    <!-- 1、header部分 -->
+    <div class="header">
+        <div class="logo">
+            <a href="1.index.html">
+                <img src="images/logo_2.png" height="120" alt="">
+            </a>
+        </div>
+        <div class="school">
+            <a href="https://www.zstu.edu.cn/" target="_blank">学校首页</a>
+            <p>|</p>
+            <a href="https://sci.zstu.edu.cn/" target="_blank">学院首页</a>
+        </div>
+    </div>
+    <!-- 2、导航部分 -->
+    <div class="nav" id="nav__">
+        <ul>
+            <li><a href="./index.html">首页</a></li>
+            <li class="down_list">
+                <a href="2.news.html">新闻中心</a>
+                <ul>
+                    <li><a href="2.news.html">实验室动态</a></li>
+                    <li><a href="2.life.html" class="selected">课余生活</a></li>
+                </ul>
+            </li>
+            <li class="down_list">
+                <a href="3.team_intro.html">研究团队</a>
+                <ul>
+                    <li><a href="3.1.team_intro_teachers.html">团队老师</a></li>
+                    <li><a href="3.2.team_intro_boshi.html">博士研究生</a></li>
+                    <li><a href="3.3.team_intro_shuoshi.html">硕士研究生</a></li>
+                    <li><a href="3.4.team_intro_biye.html">已毕业学生</a></li>
+                </ul>
+            </li>
+            <li class="down_list">
+                <a href="4.accademic_achievements.html">学术成果</a>
+                <ul>
+                    <li><a href="4.1.2025.html">论文</a></li>
+                    <li><a href="4.2.faming_1.html">专利</a></li>
+                    <li><a href="4.3.jijin.html">科研项目</a></li>
+                </ul>
+            </li>
+            <li><a href="#">实验室资源</a></li>
+            <li class="down_list">
+                <a href="6.recruit_students.html">招生/招聘信息</a>
+                <ul>
+                    <li><a href="6.1.recruit_shuoshi.html">硕士研究生</a></li>
+                    <li><a href="6.2.recruit_boshi.html">博士研究生</a></li>
+                    <li><a href="6.3.recruit_boshihou.html">博士后、优秀博士毕业生招聘</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- 3、内容部分 -->
+    <div class="content">
+        <div class="title">
+            <img src="images/icon1.png" alt="">
+            <a class="main" href="1.index.html">首页</a>
+            <span>></span>
+            <a href="2.life.html">课余生活</a>
+        </div>
+        <div class="main_content">
+            <div class="left" id="lef__">
+                <ul>
+                    <li class="recruit">新闻中心</li>
+                    <li><a href="2.news.html">实验室动态</a></li>
+                    <li><a href="2.life.html" class="selected">课余生活</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="top">
+                    <h2>课余生活</h2>
+                </div>
+                <div class="bottom">
+                    <div class="gallery" id="gallery"></div>
+                    <div class="gallery-pagination" id="gallery-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 5、尾部 -->
+    <div class="tail">
+        <div class="logo">
+            <a href="1.index.html">
+                <img src="images/logo_2.png" height="120" alt="">
+            </a>
+        </div>
+        <div class="info">
+            <p>通讯地址：浙江省杭州下沙高教园区2号路928号，浙江理工大学理学院物理系3S406室</p>
+            <p>邮 编：310018</p>
+            <p>电子邮箱: aipingwz@163.com</p>
+            <a href="https://beian.miit.gov.cn/" target="_blank">备案号：豫ICP备2024068696号</a>
+        </div>
+    </div>
+    <!-- PhotoSwipe Core HTML -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                          <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/photoswipe@5/dist/photoswipe.umd.min.js"></script>
+    <script src="https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.umd.min.js"></script>
+    <script>
+    // 图片列表
+    const imageList = [
+        "images/photos/微信图片_20250701235857_164.jpg",
+        "images/photos/微信图片_20250701235857_165.jpg",
+        "images/photos/微信图片_20250701235857_166.jpg",
+        "images/photos/微信图片_20250701235857_167.jpg",
+        "images/photos/微信图片_20250701235857_168.jpg",
+        "images/photos/微信图片_20250701235857_169.jpg",
+        "images/photos/微信图片_20250701235857_170.jpg",
+        "images/photos/微信图片_20250701235857_171.jpg",
+        "images/photos/微信图片_20250701235857_172.jpg",
+        "images/photos/微信图片_20250701235857_173.jpg",
+        "images/photos/微信图片_20250701235857_174.jpg",
+        "images/photos/微信图片_20250701235857_175.jpg",
+        "images/photos/微信图片_20250701235857_176.jpg",
+        "images/photos/微信图片_20250701235857_177.jpg",
+        "images/photos/微信图片_20250701235857_178.jpg",
+        "images/photos/微信图片_20250701235857_179.jpg",
+        "images/photos/微信图片_20250701235857_180.jpg",
+        "images/photos/微信图片_20250701235857_181.jpg",
+        "images/photos/微信图片_20250701235857_182.jpg",
+        "images/photos/微信图片_20250701235857_183.jpg",
+        "images/photos/微信图片_20250701235857_184.jpg",
+        "images/photos/微信图片_20250701235857_185.jpg",
+        "images/photos/微信图片_20250701235857_186.jpg",
+        "images/photos/微信图片_20250701235857_187.jpg",
+        "images/photos/微信图片_20250701235857_188.jpg",
+        "images/photos/微信图片_20250701235857_189.jpg",
+        "images/photos/微信图片_20250701235856_190.jpg",
+        "images/photos/微信图片_20250701235856_191.jpg",
+        "images/photos/微信图片_20250701235856_192.jpg",
+        "images/photos/微信图片_20250701235856_193.jpg",
+        "images/photos/微信图片_20250701235856_194.jpg",
+        "images/photos/微信图片_20250701235856_195.jpg",
+        "images/photos/微信图片_20250701235856_196.jpg",
+        "images/photos/微信图片_20250701235856_197.jpg",
+        "images/photos/微信图片_20250701235856_198.jpg",
+        "images/photos/微信图片_20250701235856_199.jpg",
+        "images/photos/微信图片_20250701235856_200.jpg",
+        "images/photos/微信图片_20250701235856_201.jpg",
+        "images/photos/微信图片_20250701235856_202.jpg",
+        "images/photos/微信图片_20250701235856_203.jpg",
+        "images/photos/微信图片_20250701235856_204.jpg",
+        "images/photos/微信图片_20250701235856_205.jpg",
+        "images/photos/微信图片_20250701235856_215.jpg",
+        "images/photos/微信图片_20250701235856_206.jpg",
+        "images/photos/微信图片_20250701235856_214.jpg",
+        "images/photos/微信图片_20250701235856_207.jpg",
+        "images/photos/微信图片_20250701235856_211.jpg",
+        "images/photos/微信图片_20250701235856_209.jpg",
+        "images/photos/微信图片_20250701235856_213.jpg",
+        "images/photos/微信图片_20250701235856_208.jpg",
+        "images/photos/微信图片_20250701235856_212.jpg",
+        "images/photos/微信图片_20250701235856_210.jpg",
+        "images/photos/1b6dee67321157270b6f3c816e463701.jpg",
+        "images/photos/1c6e86552774afb5848b0983454e89e9.jpg",
+        "images/photos/db92f6f5c4544dc1b6cdf5a96637b133.jpg",
+        "images/photos/4d4ae577eae30b036dd9b2f3e269e48a.jpg",
+        "images/photos/640.webp"
+    ];
+    const gallery = document.getElementById('gallery');
+    const pagination = document.getElementById('gallery-pagination');
+    const pageSize = 9;
+    let currentPage = 1;
+    function renderGallery(page) {
+        gallery.innerHTML = '';
+        const start = (page - 1) * pageSize;
+        const end = start + pageSize;
+        const pageImages = imageList.slice(start, end);
+        pageImages.forEach((src, idx) => {
+            const fileName = src.split('/').pop().replace(/\.[^.]+$/, '');
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.innerHTML = `<a href="${src}" data-pswp-width="1200" data-pswp-height="900" data-index="${start + idx}"><img src="${src}" alt="${fileName}"></a><div class="gallery-caption">${fileName}</div>`;
+            gallery.appendChild(item);
+        });
+    }
+    function renderPagination(page) {
+        pagination.innerHTML = '';
+        const totalPages = Math.ceil(imageList.length / pageSize);
+        const prevBtn = document.createElement('button');
+        prevBtn.textContent = '上一页';
+        prevBtn.disabled = page === 1;
+        prevBtn.onclick = () => { if(page > 1) { currentPage--; updateGallery(); } };
+        const nextBtn = document.createElement('button');
+        nextBtn.textContent = '下一页';
+        nextBtn.disabled = page === totalPages;
+        nextBtn.onclick = () => { if(page < totalPages) { currentPage++; updateGallery(); } };
+        pagination.appendChild(prevBtn);
+        const pageInfo = document.createElement('span');
+        pageInfo.textContent = `第 ${page} / ${totalPages} 页`;
+        pageInfo.style.margin = '0 12px';
+        pagination.appendChild(pageInfo);
+        pagination.appendChild(nextBtn);
+    }
+    function updateGallery() {
+        renderGallery(currentPage);
+        renderPagination(currentPage);
+        // 重新初始化PhotoSwipe
+        if(window.lightbox) window.lightbox.destroy();
+        window.lightbox = new PhotoSwipeLightbox({
+            gallery: '#gallery',
+            children: 'a',
+            pswpModule: PhotoSwipe
+        });
+        lightbox.on('uiRegister', function() {
+            lightbox.pswp.ui.registerElement({
+                name: 'custom-caption',
+                order: 9,
+                isButton: false,
+                appendTo: 'root',
+                html: '',
+                onInit: (el, pswp) => {
+                    pswp.on('change', () => {
+                        const curr = pswp.currSlide;
+                        el.innerHTML = curr.data.alt || curr.data.caption || '';
+                    });
+                }
+            });
+        });
+        lightbox.addFilter('itemData', (itemData, element) => {
+            itemData.alt = element.querySelector('img').alt;
+            itemData.caption = element.querySelector('img').alt;
+            return itemData;
+        });
+        lightbox.init();
+    }
+    updateGallery();
+    </script>
+</body>
+</html> 
