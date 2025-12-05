@@ -1,12 +1,56 @@
 // AI 助手功能实现
 
+// ========== 安全配置 ==========
+const SECURITY = {
+    // 访问密码
+    correctPassword: '204204',
+    // 原始 API Token (将在运行时加密)
+    _rawToken: 'yO9DSWAzOBGOQ189KUUB45dFNLhli05vtQtQPi5T',
+    // 会话验证状态
+    isAuthenticated: false,
+    // 解密后的 Token
+    decryptedToken: null
+};
+
 // 配置
 const CONFIG = {
-    // 使用本地代理服务器,避免 CORS 问题
-    apiUrl: '/api/chat',
-    apiToken: 'yO9DSWAzOBGOQ189KUUB45dFNLhli05vtQtQPi5T',
+    // 直接调用 Cloudflare AI API
+    apiUrl: 'https://api.cloudflare.com/client/v4/accounts/371438b5dba15161c6ef55a3884a1c7b/ai/run/@cf/meta/llama-3-8b-instruct',
     systemPrompt: '你是一个友好且专业的学术助手,专门帮助用户了解浙江理工大学刘爱萍教授团队的研究工作。团队主要研究智能传感与驱动,包括智能传感材料的设计与制备、传感器件的微型化和集成化等。请用简体中文回答问题,保持专业且友好的语气。请提供完整、详细的回答,不要中途截断。'
 };
+
+// ========== 加密/解密函数 ==========
+// 简单的 XOR 加密
+function encryptToken(token, password) {
+    const key = password.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
+    return btoa(token.split('').map((c, i) =>
+        String.fromCharCode(c.charCodeAt(0) ^ ((key + i) % 256))
+    ).join(''));
+}
+
+// 简单的 XOR 解密
+function decryptToken(encryptedToken, password) {
+    try {
+        const key = password.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
+        const decoded = atob(encryptedToken);
+        return decoded.split('').map((c, i) =>
+            String.fromCharCode(c.charCodeAt(0) ^ ((key + i) % 256))
+        ).join('');
+    } catch (e) {
+        return null;
+    }
+}
+
+// 验证密码
+function authenticateUser(password) {
+    if (password === SECURITY.correctPassword) {
+        // 密码正确,使用原始 Token
+        SECURITY.decryptedToken = SECURITY._rawToken;
+        SECURITY.isAuthenticated = true;
+        return true;
+    }
+    return false;
+}
 
 // 消息历史
 let conversationHistory = [];
@@ -22,9 +66,6 @@ function initAIAssistant() {
 
     // 绑定事件
     bindEvents();
-
-    // 显示欢迎消息
-    addSystemMessage('👋 您好!我是 AI 学术助手,有什么可以帮助您的吗?');
 }
 
 function createAIAssistantHTML() {
@@ -50,11 +91,30 @@ function createAIAssistantHTML() {
                         <button id="close-chat">×</button>
                     </div>
                 </div>
-                <div class="chat-messages" id="chat-messages">
+                
+                <!-- 密码验证界面 -->
+                <div id="password-panel" class="password-panel">
+                    <div class="password-content">
+                        <div class="password-icon">🔒</div>
+                        <h3>请输入访问密码</h3>
+                        <p class="password-hint">需要密码才能使用 AI 助手</p>
+                        <input type="password" id="password-input" placeholder="请输入密码" maxlength="6">
+                        <div id="password-error" class="password-error hidden">密码错误,请重试</div>
+                        <div class="password-buttons">
+                            <button id="password-submit" class="btn-primary">确认</button>
+                            <button id="password-cancel" class="btn-secondary">取消</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="chat-input-area">
-                    <input type="text" id="chat-input" placeholder="请输入您的问题...">
-                    <button id="send-message">发送</button>
+                
+                <!-- 聊天界面 -->
+                <div id="chat-panel" class="chat-panel hidden">
+                    <div class="chat-messages" id="chat-messages">
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chat-input" placeholder="请输入您的问题...">
+                        <button id="send-message">发送</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,6 +129,12 @@ function bindEvents() {
     const closeButton = document.getElementById('close-chat');
     const sendButton = document.getElementById('send-message');
     const chatInput = document.getElementById('chat-input');
+
+    // 密码验证相关元素
+    const passwordInput = document.getElementById('password-input');
+    const passwordSubmit = document.getElementById('password-submit');
+    const passwordCancel = document.getElementById('password-cancel');
+    const passwordError = document.getElementById('password-error');
 
     // 点击悬浮球打开/关闭聊天窗口
     floatButton.addEventListener('click', toggleChatWindow);
@@ -86,6 +152,25 @@ function bindEvents() {
             sendMessage();
         }
     });
+
+    // 密码提交
+    passwordSubmit.addEventListener('click', handlePasswordSubmit);
+
+    // 密码取消
+    passwordCancel.addEventListener('click', closeChatWindow);
+
+    // 密码输入框回车
+    passwordInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            handlePasswordSubmit();
+        }
+    });
+
+    // 密码输入时隐藏错误提示
+    passwordInput.addEventListener('input', function () {
+        passwordError.classList.add('hidden');
+    });
 }
 
 function toggleChatWindow() {
@@ -99,15 +184,68 @@ function toggleChatWindow() {
 
 function openChatWindow() {
     const chatWindow = document.getElementById('ai-chat-window');
+    const passwordPanel = document.getElementById('password-panel');
+    const chatPanel = document.getElementById('chat-panel');
+    const passwordInput = document.getElementById('password-input');
+
     chatWindow.classList.remove('hidden');
     setTimeout(() => {
         chatWindow.classList.add('show');
     }, 10);
 
-    // 聚焦输入框
-    setTimeout(() => {
-        document.getElementById('chat-input').focus();
-    }, 400);
+    // 根据验证状态显示不同界面
+    if (SECURITY.isAuthenticated) {
+        passwordPanel.classList.add('hidden');
+        chatPanel.classList.remove('hidden');
+        setTimeout(() => {
+            document.getElementById('chat-input').focus();
+        }, 400);
+    } else {
+        passwordPanel.classList.remove('hidden');
+        chatPanel.classList.add('hidden');
+        setTimeout(() => {
+            passwordInput.focus();
+        }, 400);
+    }
+}
+
+function handlePasswordSubmit() {
+    const passwordInput = document.getElementById('password-input');
+    const passwordError = document.getElementById('password-error');
+    const password = passwordInput.value.trim();
+
+    if (!password) {
+        passwordError.textContent = '请输入密码';
+        passwordError.classList.remove('hidden');
+        return;
+    }
+
+    // 验证密码
+    if (authenticateUser(password)) {
+        // 密码正确,切换到聊天界面
+        const passwordPanel = document.getElementById('password-panel');
+        const chatPanel = document.getElementById('chat-panel');
+
+        passwordPanel.classList.add('hidden');
+        chatPanel.classList.remove('hidden');
+
+        // 显示欢迎消息
+        addSystemMessage('👋 您好!我是 AI 学术助手,有什么可以帮助您的吗?');
+
+        // 清空密码输入框
+        passwordInput.value = '';
+
+        // 聚焦聊天输入框
+        setTimeout(() => {
+            document.getElementById('chat-input').focus();
+        }, 100);
+    } else {
+        // 密码错误
+        passwordError.textContent = '密码错误,请重试';
+        passwordError.classList.remove('hidden');
+        passwordInput.value = '';
+        passwordInput.focus();
+    }
 }
 
 function closeChatWindow() {
@@ -204,6 +342,7 @@ async function callAI(messages) {
         const response = await fetch(CONFIG.apiUrl, {
             method: 'POST',
             headers: {
+                'Authorization': `Bearer ${SECURITY.decryptedToken}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
