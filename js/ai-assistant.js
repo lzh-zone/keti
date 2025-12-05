@@ -14,8 +14,8 @@ const SECURITY = {
 
 // 配置
 const CONFIG = {
-    // 直接调用 Cloudflare AI API
-    apiUrl: 'https://api.cloudflare.com/client/v4/accounts/371438b5dba15161c6ef55a3884a1c7b/ai/run/@cf/meta/llama-3-8b-instruct',
+    // 使用 CORS 代理访问 Cloudflare AI API
+    apiUrl: 'https://corsproxy.io/?' + encodeURIComponent('https://api.cloudflare.com/client/v4/accounts/371438b5dba15161c6ef55a3884a1c7b/ai/run/@cf/meta/llama-3-8b-instruct'),
     systemPrompt: '你是一个友好且专业的学术助手,专门帮助用户了解浙江理工大学刘爱萍教授团队的研究工作。团队主要研究智能传感与驱动,包括智能传感材料的设计与制备、传感器件的微型化和集成化等。请用简体中文回答问题,保持专业且友好的语气。请提供完整、详细的回答,不要中途截断。'
 };
 
