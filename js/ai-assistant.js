@@ -4,18 +4,15 @@
 const SECURITY = {
     // 访问密码
     correctPassword: '204204',
-    // 原始 API Token (将在运行时加密)
-    _rawToken: 'yO9DSWAzOBGOQ189KUUB45dFNLhli05vtQtQPi5T',
     // 会话验证状态
-    isAuthenticated: false,
-    // 解密后的 Token
-    decryptedToken: null
+    isAuthenticated: false
+    // API Token 已在 Cloudflare Worker 中配置,前端不再需要存储
 };
 
 // 配置
 const CONFIG = {
-    // 使用 CORS 代理访问 Cloudflare AI API
-    apiUrl: 'https://corsproxy.io/?' + encodeURIComponent('https://api.cloudflare.com/client/v4/accounts/371438b5dba15161c6ef55a3884a1c7b/ai/run/@cf/meta/llama-3-8b-instruct'),
+    // 使用 Cloudflare Worker 代理(API Token 已在 Worker 中配置)
+    apiUrl: 'https://api.yes.lzh1.eu.org/',
     systemPrompt: '你是一个友好且专业的学术助手,专门帮助用户了解浙江理工大学刘爱萍教授团队的研究工作。团队主要研究智能传感与驱动,包括智能传感材料的设计与制备、传感器件的微型化和集成化等。请用简体中文回答问题,保持专业且友好的语气。请提供完整、详细的回答,不要中途截断。'
 };
 
@@ -44,8 +41,6 @@ function decryptToken(encryptedToken, password) {
 // 验证密码
 function authenticateUser(password) {
     if (password === SECURITY.correctPassword) {
-        // 密码正确,使用原始 Token
-        SECURITY.decryptedToken = SECURITY._rawToken;
         SECURITY.isAuthenticated = true;
         return true;
     }
@@ -342,8 +337,8 @@ async function callAI(messages) {
         const response = await fetch(CONFIG.apiUrl, {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${SECURITY.decryptedToken}`,
                 'Content-Type': 'application/json'
+                // Authorization 已在 Worker 中配置,不需要在前端发送
             },
             body: JSON.stringify({
                 messages: fullMessages,
