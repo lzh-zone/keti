@@ -270,7 +270,8 @@ body{
 .content .main_content .right .bottom a{
     display: block;  /* 将其变为块级元素 */
     width: 100%;
-    height: 40px;
+    height: auto;
+    min-height: 40px;
     margin: 8px 0 5px 0;
     padding-left: 11px;
     font-size: 15px;

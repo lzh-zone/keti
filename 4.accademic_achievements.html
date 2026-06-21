@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
 
     <link rel="stylesheet" href="css/ai-assistant.css">
 </head>
+
 <body>
     <!-- 1、header部分 -->
     <div class="header">
@@ -21,11 +23,11 @@
             </a>
         </div>
         <div class="school">
-            <a href="https://www.zstu.edu.cn/" target="_blank">  <!-- 打开新窗口 -->
+            <a href="https://www.zstu.edu.cn/" target="_blank"> <!-- 打开新窗口 -->
                 学校首页
             </a>
             <p>|</p>
-            <a href="https://sci.zstu.edu.cn/" target="_blank">  <!-- 打开新窗口 -->
+            <a href="https://sci.zstu.edu.cn/" target="_blank"> <!-- 打开新窗口 -->
                 学院首页
             </a>
         </div>
@@ -48,7 +50,7 @@
             <li class="down_list">
                 <a href="4.accademic_achievements.html">学术成果</a>
                 <ul>
-                    <li><a href="4.1.2025.html">论文</a></li>
+                    <li><a href="4.1.2026.html">论文</a></li>
                     <li><a href="4.2.faming_1.html">专利</a></li>
                     <li><a href="4.3.jijin.html">科研项目</a></li>
                 </ul>
@@ -64,7 +66,7 @@
             </li>
         </ul>
     </div>
-        
+
     <!-- 4、内容部分 -->
     <div class="content" style="height: 750px;">
         <div class="title">
@@ -77,8 +79,9 @@
             <div class="left" id="lef__">
                 <ul>
                     <li class="achievements">学术成果</li>
-                    <li><a href="4.1.2025.html" class="selected">论文</a></li>
-                    <li class="achievements_son"><a href="4.1.2025.html" class="selected">2025</a></li>
+                    <li><a href="4.1.2026.html" class="selected">论文</a></li>
+                    <li class="achievements_son"><a href="4.1.2026.html" class="selected">2026</a></li>
+                    <li class="achievements_son"><a href="4.1.2025.html">2025</a></li>
                     <li class="achievements_son"><a href="4.1.2024.html">2024</a></li>
                     <li class="achievements_son"><a href="4.1.2023.html">2023</a></li>
                     <li class="achievements_son"><a href="4.1.2022.html">2022</a></li>
@@ -109,7 +112,8 @@
                 </ul>
             </div>
             <div class="right" style="height: 750px;">
-                <img src="images/achievement6.jpg" alt="A colorful animated GIF" style="width: 710px; height: 663px; margin-top: 5%; margin-left: 14%;">
+                <img src="images/achievement6.jpg" alt="A colorful animated GIF"
+                    style="width: 710px; height: 663px; margin-top: 5%; margin-left: 14%;">
             </div>
         </div>
         <!-- <div class="pdf">
@@ -131,34 +135,35 @@
             <a href="https://beian.miit.gov.cn/" target="_blank">备案号：豫ICP备2024068696号</a>
         </div>
     </div>
-<script src="js/ai-assistant.js"></script>
+    <script src="js/ai-assistant.js"></script>
 </body>
 
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
-	$(function(){
-		var navBar = $("#nav__");
-		var navBar2 = $("#nav2");
-		var titleTop = navBar.offset().top;
+    $(function () {
+        var navBar = $("#nav__");
+        var navBar2 = $("#nav2");
+        var titleTop = navBar.offset().top;
 
         var lefBar = $("#lef__");
-		var lefBar2 = $("#lef2");
-		var lefTop = lefBar.offset().top;
+        var lefBar2 = $("#lef2");
+        var lefTop = lefBar.offset().top;
 
-		$(window).scroll(function(){
-			var btop = $(window).scrollTop();
-			if (btop > titleTop) {
-				navBar.addClass('fix');
-				navBar2.addClass('nav2');
+        $(window).scroll(function () {
+            var btop = $(window).scrollTop();
+            if (btop > titleTop) {
+                navBar.addClass('fix');
+                navBar2.addClass('nav2');
                 lefBar.addClass('leffix');
-				lefBar2.addClass('lef2');
-			} else {
-				navBar.removeClass('fix');
-				navBar2.removeClass('nav2');
+                lefBar2.addClass('lef2');
+            } else {
+                navBar.removeClass('fix');
+                navBar2.removeClass('nav2');
                 lefBar.removeClass('leffix');
-				lefBar2.removeClass('lef2');
-			}
-		})
-	})
+                lefBar2.removeClass('lef2');
+            }
+        })
+    })
 </script>
+
 </html>
