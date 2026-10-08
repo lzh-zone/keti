@@ -11,33 +11,36 @@
     <link rel="stylesheet" href="css/4.academic_achievements.css">
 
     <link rel="stylesheet" href="css/ai-assistant.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <!-- 1、header部分 -->
     <div class="header">
         <div class="logo">
             <a href="index.html">
-                <img src="images/logo_2.png" height="120" alt="">
+                <img src="images/logo_2.png" height="120" alt="浙江理工大学刘爱萍课题组">
             </a>
         </div>
         <div class="school">
-            <a href="https://www.zstu.edu.cn/" target="_blank">  <!-- 打开新窗口 -->
-                学校首页
-            </a>
+            <a href="https://www.zstu.edu.cn/" target="_blank">学校首页</a>
             <p>|</p>
-            <a href="https://sci.zstu.edu.cn/" target="_blank">  <!-- 打开新窗口 -->
-                学院首页
-            </a>
+            <a href="https://sci.zstu.edu.cn/" target="_blank">学院首页</a>
         </div>
     </div>
 
     <!-- 2、导航部分 -->
     <div class="nav" id="nav__">
         <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="2.news.html">新闻中心</a></li>
+            <li><a href="index.html" id="nav-item-home">首页</a></li>
             <li class="down_list">
-                <a href="3.team_intro.html">研究团队</a>
+                <a href="2.news.html" id="nav-item-news">新闻中心</a>
+                <ul>
+                    <li><a href="2.news.html">实验室动态</a></li>
+                    <li><a href="2.life.html">课余生活</a></li>
+                </ul>
+            </li>
+            <li class="down_list">
+                <a href="3.team_intro.html" id="nav-item-team">研究团队</a>
                 <ul>
                     <li><a href="3.1.team_intro_teachers.html">团队老师</a></li>
                     <li><a href="3.2.team_intro_boshi.html">博士研究生</a></li>
@@ -46,16 +49,16 @@
                 </ul>
             </li>
             <li class="down_list">
-                <a href="4.accademic_achievements.html">学术成果</a>
+                <a href="4.accademic_achievements.html" id="nav-item-achieve" class="selected">学术成果</a>
                 <ul>
                     <li><a href="4.1.2026.html">论文</a></li>
                     <li><a href="4.2.faming_1.html">专利</a></li>
                     <li><a href="4.3.jijin.html">科研项目</a></li>
                 </ul>
             </li>
-            <li><a href="#">实验室资源</a></li>
+            <li><a href="5.resource.html" id="nav-item-resource">实验室资源</a></li>
             <li class="down_list">
-                <a href="6.recruit_students.html">招生/招聘信息</a>
+                <a href="6.recruit_students.html" id="nav-item-recruit">招生/招聘信息</a>
                 <ul>
                     <li><a href="6.1.recruit_shuoshi.html">硕士研究生</a></li>
                     <li><a href="6.2.recruit_boshi.html">博士研究生</a></li>
@@ -100,6 +103,7 @@
                     <li class="achievements_son"><a href="4.1.2011.html">2011</a></li>
                     <li class="achievements_son"><a href="4.1.2010andBefore_1.html">2010</a></li>
                     <li><a href="4.2.faming_2025.html" class="selected">发明专利</a></li>
+                    <li class="achievements_son"><a href="4.2.faming_2026.html">2026</a></li>
                     <li class="achievements_son"><a href="4.2.faming_2025.html">2025</a></li>
                     <li class="achievements_son"><a href="4.2.faming_2024.html">2024</a></li>
                     <li class="achievements_son"><a href="4.2.faming_2023.html">2023</a></li>
@@ -118,7 +122,7 @@
                     <h2>发明专利</h2>
                 </div>
                 <div class="bottom">
-                    <a href="static/faming/CN115808446A一种水凝胶薄膜湿度传感器的制备方法.pdf" target="_blank">● <b>刘爱萍</b>；郭平；吴化平；程琳；季善鹏，“一种水凝胶薄膜湿度传感器的制备方法”，申请号：CN202211465460.2，申请日：2022.11.22</a>
+                    <a href="static/faming/CN115808446B一种水凝胶薄膜湿度传感器的制备方法.pdf" target="_blank">● <b>刘爱萍</b>；郭平；吴化平；程琳；季善鹏，“一种水凝胶薄膜湿度传感器的制备方法”，专利号：ZL 202211465460.2，申请日：2022.11.22，授权公告日：2026.02.13</a>
                     <a href="static/faming/CN115794723A一种激光诱导石墨烯基柔性计算器.pdf" target="_blank">● 陈冠政；程琳；王露；罗轩籽；阮迪清；<b>刘爱萍</b>；“一种激光诱导石墨烯基柔性计算器”，申请号：CN202211363030.X，申请日：2022.11.02</a>
                     <a href="static/faming/CN115792278A一种加速度传感器.pdf" target="_blank">● 何永蔚；陈冠政；阮迪清；程琳；<b>刘爱萍</b>；“一种加速度传感器”，申请号：CN202211656789.7，申请日：2022.12.22</a>
                     <a href="static/faming/CN111533925B一种双层水凝胶、制备方法及其应用.pdf" target="_blank">● <b>刘爱萍</b>；董鹏丽；程琳；张智钦；房彬，“一种双层水凝胶、制备方法及其应用”，专利号：ZL202010201123.7，申请日：2020.03.20，授权日：2023.03.03</a>
@@ -163,7 +167,7 @@
     <div class="tail">
         <div class="logo">
             <a href="index.html">
-                <img src="images/logo_2.png" height="120" alt="">
+                <img src="images/logo_2.png" height="120" alt="浙江理工大学刘爱萍课题组">
             </a>
         </div>
         <div class="info">

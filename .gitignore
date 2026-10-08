@@ -1,0 +1,6 @@
+scratch/backup_before_sync/
+scratch/*.png
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db

@@ -1,0 +1,2273 @@
+/* ==========================================================================
+   浙江理工大学智能传感与驱动团队（刘爱萍教授课题组）
+   全站统一响应式适配样式表 (Responsive Stylesheet)
+   ========================================================================== */
+
+/* 全局盒模型重置 */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   PC桌面端 (>= 993px)
+   使首页四个内容框向中间收拢，宽度严格限制在导航栏范围内 (width: 80%; max-width: 1200px)
+   ========================================================================== */
+@media screen and (min-width: 993px) {
+    .index_row_section {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        width: 80% !important;
+        max-width: 1200px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .row_home_about {
+        margin-top: 24px !important;
+        margin-bottom: 28px !important;
+    }
+
+    .row_news_gallery {
+        margin-top: 0 !important;
+        margin-bottom: 40px !important;
+    }
+
+    /* 4个框的统一标题样式：与全站学术质感统一，底边线整齐 */
+    .index_row_section .all_title {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 12px 0 !important;
+    }
+
+    .index_row_section .homepage_title,
+    .index_row_section .about_us,
+    .index_row_section .news {
+        width: 100% !important;
+        height: 38px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-bottom: 2px solid #e2e8f0 !important;
+        display: flex !important;
+        align-items: center !important;
+        position: relative !important;
+        box-sizing: border-box !important;
+    }
+
+    .index_row_section .homepage_title p,
+    .index_row_section .about_us p,
+    .index_row_section .news p {
+        display: inline-block !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        height: 38px !important;
+        line-height: 36px !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        color: #1e3a8a !important;
+        padding: 0 6px !important;
+        margin: 0 !important;
+        border-bottom: 3px solid #2563eb !important;
+        white-space: nowrap !important;
+        position: relative !important;
+        bottom: -2px !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* 框1: Home 轮播图 */
+    .col_home {
+        width: 49% !important;
+        flex: 0 0 49% !important;
+    }
+
+    .col_home .banners {
+        width: 100% !important;
+        height: 360px !important;
+        margin: 0 !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.08) !important;
+        border: 1px solid #e2e8f0 !important;
+        position: relative !important;
+    }
+
+    .col_home .banners .images {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        width: max-content !important;
+    }
+
+    .col_home .banners .images li {
+        flex-shrink: 0 !important;
+    }
+
+    .col_home .banners .images,
+    .col_home .banners .images li,
+    .col_home .banners .images li a,
+    .col_home .banners .images li img {
+        height: 360px !important;
+    }
+
+    .col_home .banners .images li img {
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* 框2: About US 简介卡片 */
+    .col_about {
+        width: 49% !important;
+        flex: 0 0 49% !important;
+    }
+
+    .col_about .about_us_content {
+        width: 100% !important;
+        height: 360px !important;
+        min-height: 360px !important;
+        margin: 0 !important;
+        padding: 24px 26px !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.05) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+    }
+
+    .col_about .about_us_content p {
+        font-size: 15px !important;
+        line-height: 1.85 !important;
+        color: #334155 !important;
+        text-indent: 2em !important;
+        margin-bottom: 14px !important;
+        text-align: justify !important;
+    }
+
+    .col_about .about_us_content p:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    /* 框3: News 新闻动态列表卡片 */
+    .col_news {
+        width: 56% !important;
+        flex: 0 0 56% !important;
+    }
+
+    .col_news .banners.new__ {
+        width: 100% !important;
+        height: 250px !important;
+        min-height: 250px !important;
+        margin: 0 !important;
+        padding: 12px 18px !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.05) !important;
+        overflow: hidden !important;
+    }
+
+    .col_news .banners.new__ ul {
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+        width: 100% !important;
+    }
+
+    .col_news .banners.new__ li {
+        width: 100% !important;
+        height: 35px !important;
+        line-height: 35px !important;
+        margin: 0 !important;
+        padding: 0 6px !important;
+        border-bottom: 1px dashed #e2e8f0 !important;
+        list-style: none !important;
+        background: transparent !important;
+        transition: background-color 0.2s ease !important;
+        border-radius: 4px !important;
+    }
+
+    .col_news .banners.new__ li:hover {
+        background-color: #f8fafc !important;
+    }
+
+    .col_news .banners.new__ li:last-child {
+        border-bottom: none !important;
+    }
+
+    .col_news .banners.new__ a {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        text-decoration: none !important;
+        font-size: 14px !important;
+        color: #334155 !important;
+        padding: 0 !important;
+    }
+
+    .col_news .banners.new__ a:hover p {
+        color: #2563eb !important;
+    }
+
+    .col_news .banners.new__ a p {
+        flex: 1 1 auto !important;
+        width: auto !important;
+        max-width: 78% !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        color: #334155 !important;
+        transition: color 0.2s ease !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .col_news .banners.new__ a p::before {
+        content: "" !important;
+        display: inline-block !important;
+        width: 5px !important;
+        height: 5px !important;
+        border-radius: 50% !important;
+        background-color: #3b82f6 !important;
+        margin-right: 8px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .col_news .banners.new__ a span {
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+        font-size: 12px !important;
+        color: #64748b !important;
+        background: #f1f5f9 !important;
+        padding: 2px 7px !important;
+        border-radius: 4px !important;
+    }
+
+    /* 框4: Photo Gallery 相册预览 */
+    .col_gallery {
+        width: 41% !important;
+        flex: 0 0 41% !important;
+    }
+
+    .col_gallery #previewContainer {
+        width: 100% !important;
+        height: 250px !important;
+        margin: 0 !important;
+        border-radius: 8px !important;
+        border: 4px solid #ffffff !important;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.08) !important;
+        overflow: hidden !important;
+        position: relative !important;
+        cursor: pointer !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    }
+
+    .col_gallery #previewContainer:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
+    }
+
+    /* ==========================================================================
+       全站子页面 PC 桌面端 (>= 993px) 现代流式双栏与高阶视觉美化
+       ========================================================================== */
+
+    /* 1. 子页面主容器：与导航栏严格同宽居中，高度自适应解除任何Footer重叠 */
+    .content {
+        width: 80% !important;
+        max-width: 1200px !important;
+        min-height: calc(100vh - 360px) !important;
+        height: auto !important;
+        margin: 20px auto 60px auto !important;
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. 面包屑导航条：规范在主体顶部 */
+    .content .title {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 46px !important;
+        line-height: 46px !important;
+        margin: 0 0 20px 0 !important;
+        padding: 0 4px !important;
+        border-bottom: 2px solid #e2e8f0 !important;
+        display: flex !important;
+        align-items: center !important;
+        font-size: 14px !important;
+        color: #64748b !important;
+        box-sizing: border-box !important;
+        z-index: 1 !important;
+    }
+
+    .content .title img {
+        position: static !important;
+        margin: 0 10px 0 0 !important;
+        width: 15px !important;
+        height: 15px !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
+    }
+
+    .content .title a {
+        color: #64748b !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease !important;
+    }
+
+    .content .title a:hover {
+        color: #2563eb !important;
+    }
+
+    .content .title a.main {
+        margin-left: 0 !important;
+    }
+
+    .content .title span {
+        margin: 0 8px !important;
+        color: #cbd5e1 !important;
+    }
+
+    /* 3. 主体双栏容器：解除写死绝对定位，自然流式双栏 */
+    .content .main_content {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        min-height: 520px !important;
+        height: auto !important;
+        z-index: 1 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4. 左侧栏：精致学术卡片导航（自适应长文本，绝不截断折行） */
+    .content .main_content .left,
+    .content .left {
+        width: 235px !important;
+        flex: 0 0 235px !important;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    .content .main_content .left ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .content .main_content .left li.team,
+    .content .main_content .left li.achievements,
+    .content .main_content .left li.recruit,
+    .content .main_content .left li:first-child:not(:has(a)) {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: 52px !important;
+        line-height: 52px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: linear-gradient(135deg, #1e5597 0%, #2f72c0 100%) !important;
+        color: #ffffff !important;
+        font-size: 17px !important;
+        font-weight: 700 !important;
+        text-align: center !important;
+        letter-spacing: 1px !important;
+        border-bottom: 2px solid #fd7d02 !important;
+        box-sizing: border-box !important;
+    }
+
+    .content .main_content .left li {
+        width: 100% !important;
+        min-height: 44px !important;
+        height: auto !important;
+        margin: 0 !important;
+        background: transparent !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+        list-style: none !important;
+        display: flex !important;
+        align-items: stretch !important;
+        justify-content: center !important;
+    }
+
+    .content .main_content .left li:last-child {
+        border-bottom: none !important;
+    }
+
+    .content .main_content .left li a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 10px 16px !important;
+        width: 100% !important;
+        min-height: 44px !important;
+        height: auto !important;
+        color: #475569 !important;
+        font-size: 14.5px !important;
+        font-weight: 500 !important;
+        line-height: 1.45 !important;
+        word-break: break-word !important;
+        text-decoration: none !important;
+        transition: all 0.2s ease !important;
+        box-sizing: border-box !important;
+    }
+
+    .content .main_content .left li a:hover {
+        background-color: #f8fafc !important;
+        color: #2563eb !important;
+    }
+
+    .content .main_content .left li a.selected,
+    .content .main_content .left li .selected {
+        background-color: #eff6ff !important;
+        color: #1d4ed8 !important;
+        font-weight: 600 !important;
+        border-left: 4px solid #2563eb !important;
+        border-right: 4px solid transparent !important;
+    }
+
+    .content .main_content .left li.achievements_son {
+        min-height: 38px !important;
+        height: auto !important;
+        background-color: #fafbfc !important;
+    }
+
+    .content .main_content .left li.achievements_son a {
+        padding: 8px 16px !important;
+        min-height: 38px !important;
+        font-size: 13.5px !important;
+        color: #64748b !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    .content .main_content .left li.achievements_son a:hover {
+        color: #2563eb !important;
+    }
+
+    .content .main_content .left li.achievements_son a.selected {
+        background-color: #eff6ff !important;
+        color: #1d4ed8 !important;
+        border-left: 4px solid #2563eb !important;
+        border-right: 4px solid transparent !important;
+    }
+
+    /* 5. 右侧主内容卡片区 */
+    .content .main_content .right {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 265px) !important;
+        flex: 1 1 auto !important;
+        margin: 0 !important;
+        margin-left: 30px !important;
+        padding: 32px 36px !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04) !important;
+        min-height: 520px !important;
+        height: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .content .main_content .right .top,
+    .content .main_content .right .topzhuanli {
+        width: 100% !important;
+        height: auto !important;
+        padding-bottom: 16px !important;
+        margin-bottom: 24px !important;
+        border-bottom: 2px solid #e2e8f0 !important;
+        border-left: none !important;
+        text-align: left !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .content .main_content .right .top h2,
+    .content .main_content .right .topzhuanli h2,
+    .content .main_content .right h2 {
+        font-size: 22px !important;
+        font-weight: 700 !important;
+        color: #1e3a8a !important;
+        margin: 0 !important;
+        padding: 0 0 8px 0 !important;
+        display: inline-block !important;
+        border-bottom: 3px solid #2563eb !important;
+        margin-bottom: -18px !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    .content .main_content .right .bottom,
+    .content .main_content .right .bottomjijin,
+    .content .main_content .right .bottomzhuanli {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        border-left: none !important;
+    }
+
+    /* 6. 师生网格卡片重构（姓名完美居中展示，消除重叠与挤飞） */
+    .content .main_content .right .grid_img {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 22px !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 8px 0 !important;
+        padding: 0 !important;
+        border-left: none !important;
+    }
+
+    .content .main_content .right .grid_img a {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        height: 100% !important;
+        align-self: stretch !important;
+        margin: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 16px 12px 14px 12px !important;
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 8px !important;
+        text-decoration: none !important;
+        transition: all 0.25s ease !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+        box-sizing: border-box !important;
+    }
+
+    .content .main_content .right .grid_img a:hover {
+        transform: translateY(-4px) !important;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+        border-color: #93c5fd !important;
+        background: #ffffff !important;
+    }
+
+    .content .main_content .right .grid_img a img,
+    .content .main_content .right .grid_img img {
+        position: static !important;
+        width: 135px !important;
+        height: 180px !important;
+        max-width: 100% !important;
+        object-fit: cover !important;
+        border-radius: 6px !important;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08) !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    .content .main_content .right .grid_img a p,
+    .content .main_content .right .grid_img p {
+        position: static !important;
+        margin: 12px 0 0 0 !important;
+        margin-left: 0 !important;
+        padding: 0 !important;
+        font-size: 15.5px !important;
+        font-weight: 600 !important;
+        color: #1e293b !important;
+        text-align: center !important;
+        width: 100% !important;
+        line-height: 1.3 !important;
+        transition: color 0.2s ease !important;
+    }
+
+    .content .main_content .right .grid_img a:hover p {
+        color: #2563eb !important;
+    }
+
+    /* 7. 师生个人详情页排版美化（居中学者肖像，正文两端对齐，标题学术蓝竖线） */
+    .content .main_content .right .student,
+    .student {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .content .main_content .right .student img,
+    .student p img,
+    .student img {
+        position: static !important;
+        display: block !important;
+        width: 175px !important;
+        height: 235px !important;
+        object-fit: cover !important;
+        max-width: 60% !important;
+        margin: 10px auto 26px auto !important;
+        border-radius: 10px !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+        border: 4px solid #ffffff !important;
+        outline: 1px solid #e2e8f0 !important;
+    }
+
+    .content .main_content .right .student p,
+    .student p {
+        position: static !important;
+        width: 100% !important;
+        margin: 10px 0 !important;
+        margin-top: 10px !important;
+        padding: 0 !important;
+        text-indent: 2em !important;
+        font-size: 15px !important;
+        line-height: 1.9 !important;
+        color: #334155 !important;
+        text-align: justify !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .content .main_content .right .student p b,
+    .student p b {
+        display: inline-flex !important;
+        align-items: center !important;
+        font-size: 17px !important;
+        font-weight: 700 !important;
+        color: #1e3a8a !important;
+        margin-top: 24px !important;
+        margin-bottom: 6px !important;
+        padding-left: 10px !important;
+        border-left: 4px solid #2563eb !important;
+        border-bottom: none !important;
+    }
+
+    /* 8. 新闻列表美化（标题平滑截断，日期右对齐徽标化） */
+    .content .main_content .right .bottom ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .content .main_content .right .bottom li {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 44px !important;
+        margin: 0 !important;
+        padding: 10px 8px !important;
+        border-bottom: 1px dashed #e2e8f0 !important;
+        list-style: none !important;
+        background: transparent !important;
+        display: flex !important;
+        align-items: center !important;
+        transition: background-color 0.2s ease !important;
+        border-radius: 4px !important;
+    }
+
+    .content .main_content .right .bottom li:hover {
+        background-color: #f8fafc !important;
+    }
+
+    .content .main_content .right .bottom li a {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-decoration: none !important;
+        color: #334155 !important;
+        font-size: 14.5px !important;
+        line-height: 1.5 !important;
+        text-indent: 0 !important;
+    }
+
+    .content .main_content .right .bottom li a:hover p {
+        color: #2563eb !important;
+    }
+
+    .content .main_content .right .bottom li a p {
+        flex: 1 1 auto !important;
+        width: auto !important;
+        max-width: 80% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        color: #334155 !important;
+        transition: color 0.2s ease !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .content .main_content .right .bottom li a p::before {
+        content: "" !important;
+        display: inline-block !important;
+        width: 6px !important;
+        height: 6px !important;
+        border-radius: 50% !important;
+        background: #3b82f6 !important;
+        margin-right: 10px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .content .main_content .right .bottom li a span {
+        flex: 0 0 auto !important;
+        margin-left: 16px !important;
+        font-size: 12.5px !important;
+        color: #64748b !important;
+        background: #f1f5f9 !important;
+        padding: 3px 8px !important;
+        border-radius: 4px !important;
+    }
+
+    /* 9. 学术论文列表高质感升级（卡片感、DOI小胶囊） */
+    .content .main_content .right .bottom .lunwenStyle {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 18px 0 0 0 !important;
+        padding: 12px 16px 6px 16px !important;
+        font-size: 15.5px !important;
+        font-weight: 700 !important;
+        line-height: 1.55 !important;
+        color: #1e3a8a !important;
+        background: #f8fafc !important;
+        border-left: 4px solid #2563eb !important;
+        border-radius: 6px 6px 0 0 !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease, background-color 0.2s ease !important;
+    }
+
+    .content .main_content .right .bottom .lunwenStyle:hover {
+        background-color: #eff6ff !important;
+        color: #2563eb !important;
+    }
+
+    .content .main_content .right .bottom .toplunwen {
+        margin-top: 0 !important;
+    }
+
+    .content .main_content .right .bottom div {
+        font-size: 14px !important;
+        color: #475569 !important;
+        line-height: 1.65 !important;
+        padding: 4px 16px !important;
+        background: #f8fafc !important;
+        margin: 0 !important;
+    }
+
+    .content .main_content .right .bottom .journal {
+        font-size: 13.5px !important;
+        color: #0284c7 !important;
+        font-style: italic !important;
+        font-weight: 500 !important;
+    }
+
+    .content .main_content .right .bottom a.DOI,
+    .content .main_content .right .bottom .DOI,
+    .DOI {
+        display: inline-flex !important;
+        align-items: center !important;
+        width: auto !important;
+        max-width: fit-content !important;
+        font-size: 12.5px !important;
+        font-weight: 500 !important;
+        color: #2563eb !important;
+        background: #eff6ff !important;
+        border: 1px solid #bfdbfe !important;
+        border-bottom: 1px solid #bfdbfe !important;
+        padding: 4px 14px !important;
+        border-radius: 14px !important;
+        text-decoration: none !important;
+        margin: 8px 18px 24px 18px !important;
+        transition: all 0.2s ease !important;
+    }
+
+    .content .main_content .right .bottom a.DOI:hover,
+    .content .main_content .right .bottom .DOI:hover {
+        background: #2563eb !important;
+        color: #ffffff !important;
+        border-color: #2563eb !important;
+        transform: translateY(-1px) !important;
+    }
+
+    /* 10. 专利与科研项目条目卡片化（精确排除已毕业学生与网格团队） */
+    .content .main_content .right:not(:has(.student)) .bottom:not(.bottom_biye):not(.grid_img) > p,
+    .content .main_content .right .bottomzhuanli p,
+    .content .main_content .right .bottomjijin p,
+    .content .main_content .right .bottom:not(.bottom_biye):not(.grid_img) > a:not(.lunwenStyle):not(.DOI):not([href*="html"]),
+    .content .main_content .right .bottomjijin a {
+        position: static !important;
+        display: block !important;
+        width: 100% !important;
+        padding: 14px 18px !important;
+        margin: 0 0 12px 0 !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-left: 4px solid #3b82f6 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+        font-size: 14px !important;
+        line-height: 1.75 !important;
+        color: #334155 !important;
+        text-decoration: none !important;
+        text-indent: 0 !important;
+        transition: all 0.25s ease !important;
+        box-sizing: border-box !important;
+    }
+
+    .content .main_content .right:not(:has(.student)) .bottom:not(.bottom_biye):not(.grid_img) > p:hover,
+    .content .main_content .right .bottomzhuanli p:hover,
+    .content .main_content .right .bottomjijin p:hover,
+    .content .main_content .right .bottom:not(.bottom_biye):not(.grid_img) > a:not(.lunwenStyle):not(.DOI):not([href*="html"]):hover,
+    .content .main_content .right .bottomjijin a:hover {
+        border-color: #93c5fd !important;
+        border-left-color: #1d4ed8 !important;
+        background: #f8fafc !important;
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08) !important;
+        transform: translateY(-2px) !important;
+        color: #1e3a8a !important;
+    }
+
+    /* 11. 已毕业学生现代档案条目卡片化 */
+    .content .main_content .right .bottom_biye {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 100% !important;
+        margin-top: 6px !important;
+    }
+
+    .content .main_content .right .bottom_biye a,
+    .content .main_content .right .bottom.bottom_biye a {
+        display: grid !important;
+        grid-template-columns: 85px 140px 1fr 120px !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 46px !important;
+        padding: 10px 18px !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 8px !important;
+        text-decoration: none !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+        box-sizing: border-box !important;
+        transition: all 0.2s ease !important;
+        margin: 0 !important;
+    }
+
+    .content .main_content .right .bottom_biye a:hover,
+    .content .main_content .right .bottom.bottom_biye a:hover {
+        border-color: #93c5fd !important;
+        background: #f0f7ff !important;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.06) !important;
+        transform: translateY(-1px) !important;
+    }
+
+    .content .main_content .right .bottom_biye a p,
+    .content .main_content .right .bottom.bottom_biye a p {
+        position: static !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 14px !important;
+        color: #475569 !important;
+        text-indent: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        line-height: 1.4 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        width: auto !important;
+    }
+
+    .content .main_content .right .bottom_biye a p:first-child,
+    .content .main_content .right .bottom.bottom_biye a p:first-child {
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        color: #1e3a8a !important;
+    }
+
+    .content .main_content .right .bottom_biye a p:nth-child(2),
+    .content .main_content .right .bottom.bottom_biye a p:nth-child(2) {
+        color: #2563eb !important;
+        font-weight: 500 !important;
+        font-size: 13.5px !important;
+    }
+
+    .content .main_content .right .bottom_biye a p:last-child,
+    .content .main_content .right .bottom.bottom_biye a p:last-child {
+        text-align: right !important;
+        color: #64748b !important;
+        font-size: 13px !important;
+    }
+
+    /* 分页控件居中美化 */
+    .content .main_content .right .change_page {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 30px 0 10px 0 !important;
+        padding: 16px 0 0 0 !important;
+        border-top: 1px solid #e2e8f0 !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .content .main_content .right .change_page ul {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .content .main_content .right .change_page li {
+        position: static !important;
+        width: 34px !important;
+        height: 34px !important;
+        line-height: 34px !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 6px !important;
+        background: #ffffff !important;
+        transition: all 0.2s ease !important;
+        margin: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .content .main_content .right .change_page li a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        font-size: 14px !important;
+        color: #475569 !important;
+        text-decoration: none !important;
+    }
+
+    .content .main_content .right .change_page li:hover,
+    .content .main_content .right .change_page li.selected,
+    .content .main_content .right .change_page .selected {
+        background-color: #2563eb !important;
+        border-color: #2563eb !important;
+    }
+
+    .content .main_content .right .change_page li:hover a,
+    .content .main_content .right .change_page li.selected a,
+    .content .main_content .right .change_page .selected a {
+        color: #ffffff !important;
+    }
+
+    /* 11. 课余生活相册墙 (2.life.html) */
+    .content .main_content .right .bannersall:not(.new__) ul {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .content .main_content .right .bannersall:not(.new__) li {
+        width: 100% !important;
+        height: 190px !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+        border: 1px solid #e2e8f0 !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    }
+
+    .content .main_content .right .bannersall:not(.new__) li:hover {
+        transform: translateY(-4px) !important;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14) !important;
+    }
+
+    .content .main_content .right .bannersall:not(.new__) li img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+    /* 12. 招生招聘页面 (6.recruit_students.html) */
+    .content .main_content .right img[src*="join_us"] {
+        position: static !important;
+        display: block !important;
+        max-width: 80% !important;
+        height: auto !important;
+        margin: 10px auto 24px auto !important;
+        border-radius: 10px !important;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    /* 13. 页脚统一样式与上边距 */
+    .tail {
+        width: 100% !important;
+        margin-top: 60px !important;
+        position: relative !important;
+        clear: both !important;
+    }
+}
+
+/* ==========================================================================
+   笔记本电脑与中等屏幕 (<= 1200px)
+   ========================================================================== */
+@media screen and (max-width: 1200px) {
+    html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    body {
+        height: auto !important;
+        min-height: 100vh !important;
+        margin: 0 auto !important;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .nav {
+        width: 95% !important;
+    }
+}
+
+/* ==========================================================================
+   平板与移动端通用核心重构 (<= 992px)
+   ========================================================================== */
+/* ==========================================================================
+   平板与移动端通用核心重构 (<= 992px)
+   ========================================================================== */
+/* ==========================================================================
+   平板与移动端通用核心重构 (<= 992px)
+   ========================================================================== */
+/* ==========================================================================
+   平板与移动端通用核心重构 (<= 992px)
+   ========================================================================== */
+@media screen and (max-width: 992px) {
+    /* 1. 根容器彻底防止横向滚动与溢出 */
+    html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    body {
+        min-width: 0 !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 限制 content 内部所有元素绝不超出父容器 */
+    .content, .content * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. 彻底解除二级页面的写死绝对定位与尺寸 */
+    .content {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 95% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 15px auto 40px auto !important;
+        padding: 0 !important;
+    }
+
+    .content .title {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        line-height: 1.5 !important;
+        margin-bottom: 15px !important;
+        padding: 8px 4px !important;
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        border-bottom: 1px solid #e5e7eb !important;
+    }
+
+    .content .title img {
+        position: static !important;
+        margin: 0 !important;
+        vertical-align: middle !important;
+    }
+
+    .content .title .main {
+        margin-left: 4px !important;
+    }
+
+    .content .main_content {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    /* 侧边栏转为顶部横向标签卡片 */
+    .content .main_content .left {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        height: auto !important;
+        margin: 0 0 15px 0 !important;
+        padding: 12px 14px !important;
+        background: #fff !important;
+        border-radius: 8px !important;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+    }
+
+    .content .main_content .left ul {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .content .main_content .left li {
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        line-height: normal !important;
+    }
+
+    .content .main_content .left li a {
+        padding: 6px 12px !important;
+        font-size: 13px !important;
+        border-radius: 4px !important;
+        background-color: #f3f4f6 !important;
+        color: #4b5563 !important;
+        display: inline-block !important;
+        transition: all 0.2s ease !important;
+    }
+
+    .content .main_content .left li a.selected,
+    .content .main_content .left li .selected {
+        background-color: #2f72c0 !important;
+        color: #ffffff !important;
+    }
+
+    .content .main_content .left .achievements,
+    .content .main_content .left .team,
+    .content .main_content .left .recruit {
+        width: 100% !important;
+        margin: 0 0 8px 0 !important;
+        height: auto !important;
+        line-height: normal !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: #1f2937 !important;
+        border-bottom: 2px solid #2f72c0 !important;
+        padding-bottom: 6px !important;
+        background: transparent !important;
+    }
+
+    /* 正文内容卡片解除定位与固定高度 */
+    .content .main_content .right {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        border-left: none !important;
+        padding: 16px !important;
+        background: #fff !important;
+        border-radius: 8px !important;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+    }
+
+    .content .main_content .right .top,
+    .content .main_content .right .topzhuanli {
+        width: 100% !important;
+        height: auto !important;
+        line-height: normal !important;
+        text-align: left !important;
+        margin-bottom: 14px !important;
+        padding-bottom: 8px !important;
+        border-left: none !important;
+        border-bottom: 1px solid #e5e7eb !important;
+    }
+
+    .content .main_content .right .bottom,
+    .content .main_content .right .bottomjijin {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        border-left: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .content .main_content .right .bottom .lunwenStyle,
+    .content .main_content .right .bottom a,
+    .content .main_content .right .bottomjijin a {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        margin: 14px 0 6px 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        text-indent: 0 !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        white-space: normal !important;
+    }
+
+    .content .main_content .right .bottom div,
+    .content .main_content .right .bottom .journal,
+    .content .main_content .right .bottom .DOI {
+        padding: 0 !important;
+        margin: 4px 0 !important;
+        width: 100% !important;
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .content .main_content .right .bottom .DOI {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        word-break: break-all !important;
+        padding-bottom: 12px !important;
+    }
+
+    /* 师生主页排版 */
+    .content .main_content .right .student,
+    .student, .content .pic {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: auto !important;
+        text-align: center !important;
+    }
+
+    .content .main_content .right .student img,
+    .student p img, .student img {
+        position: static !important;
+        display: block !important;
+        height: auto !important;
+        max-height: 240px !important;
+        width: auto !important;
+        max-width: 70% !important;
+        border-radius: 8px !important;
+        margin: 10px auto !important;
+    }
+
+    .content .main_content .right .student p,
+    .student p {
+        width: 100% !important;
+        margin: 12px 0 !important;
+        padding: 0 !important;
+        line-height: 1.8 !important;
+        text-indent: 2em !important;
+        text-align: justify !important;
+        word-break: break-word !important;
+    }
+
+    /* 成员网格列表 (平板3列) */
+    .content .main_content .right .grid_img,
+    .content .main_content .right .bottom.grid_img,
+    .grid_img {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 16px !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 10px 0 !important;
+        padding: 0 !important;
+    }
+
+    .content .main_content .right .grid_img a,
+    .content .main_content .right .bottom.grid_img a,
+    .grid_img a {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        margin-top: 0 !important;
+        padding: 10px 6px !important;
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 8px !important;
+        text-decoration: none !important;
+    }
+
+    .content .main_content .right .grid_img a img,
+    .content .main_content .right .grid_img img,
+    .content .main_content .right .bottom.grid_img img,
+    .grid_img a img {
+        position: static !important;
+        display: block !important;
+        width: 120px !important;
+        height: 155px !important;
+        max-width: 90% !important;
+        object-fit: cover !important;
+        border-radius: 6px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    .content .main_content .right .grid_img a p,
+    .content .main_content .right .grid_img p,
+    .content .main_content .right .bottom.grid_img p,
+    .grid_img a p {
+        position: static !important;
+        display: block !important;
+        width: 100% !important;
+        margin: 8px 0 0 0 !important;
+        margin-left: 0 !important;
+        margin-top: 8px !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        text-align: center !important;
+    }
+}
+
+/* ==========================================================================
+   移动端手机核心适配 (<= 768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    /* 1. 全局容器与Body */
+    html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    body {
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 100vh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background-color: #f8fafc !important;
+    }
+
+    /* 限制 content 内部所有元素绝不超出父容器 */
+    .content, .content * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    img, .content img, .content .main_content img, .content .main_content .right img, img[src*="join_us"] {
+        position: static !important;
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    /* 2. 头部Header：消除原背景图与文字挤压 */
+    .header {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 52px !important;
+        padding: 6px 10px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        background: #2a6dbb !important;
+        background-image: none !important;
+        border-bottom: 3px solid #fd7d02 !important;
+        margin-top: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .header .logo {
+        margin: 0 !important;
+        flex: 1 1 auto !important;
+        max-width: 65% !important;
+    }
+
+    .header .logo img {
+        position: static !important;
+        height: 34px !important;
+        width: auto !important;
+        display: block !important;
+        object-fit: contain !important;
+    }
+
+    .header .school {
+        position: static !important;
+        float: none !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        font-size: 12px !important;
+        color: #fff !important;
+        white-space: nowrap !important;
+        flex: 0 0 auto !important;
+        gap: 3px !important;
+    }
+
+    .header .school a {
+        font-size: 12px !important;
+        color: #ffffff !important;
+        padding: 2px 2px !important;
+    }
+
+    .header .school p {
+        color: rgba(255,255,255,0.7) !important;
+        margin: 0 !important;
+    }
+
+    /* 3. 导航栏Nav：横向平滑触摸滚动，全站6大主栏目完整展现 */
+    .nav {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 42px !important;
+        background-color: #1e5597 !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        border-radius: 0 !important;
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        z-index: 100 !important;
+    }
+
+    .nav::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .nav ul {
+        display: inline-flex !important;
+        flex-wrap: nowrap !important;
+        width: max-content !important;
+        max-width: none !important;
+        height: 42px !important;
+        padding: 0 8px !important;
+        margin: 0 !important;
+    }
+
+    .nav li {
+        width: auto !important;
+        min-width: max-content !important;
+        max-width: none !important;
+        padding: 0 12px !important;
+        margin: 0 1px !important;
+        height: 42px !important;
+        line-height: 42px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .nav li a {
+        font-size: 14px !important;
+        white-space: nowrap !important;
+        display: block !important;
+        color: #ffffff !important;
+        padding: 0 !important;
+    }
+
+    .nav .down_list ul {
+        display: none !important;
+    }
+
+    /* 4. 二级页面结构核心降维 (解除绝对定位) */
+    .content {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 95% !important;
+        margin: 12px auto 25px auto !important;
+        padding: 0 !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+    .content .title {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        line-height: 1.5 !important;
+        padding: 6px 2px !important;
+        margin: 0 0 10px 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+        font-size: 12px !important;
+        color: #64748b !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+    }
+
+    .content .title img {
+        position: static !important;
+        margin: 0 !important;
+        height: 13px !important;
+        width: auto !important;
+        vertical-align: middle !important;
+    }
+
+    .content .title a {
+        color: #2563eb !important;
+        font-size: 12px !important;
+        margin: 0 !important;
+    }
+
+    .content .title .main {
+        margin-left: 2px !important;
+    }
+
+    .content .main_content {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+
+    /* 侧边栏/分类项转为手机自适应优雅标签 */
+    .content .main_content .left {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 10px 12px !important;
+        background: #ffffff !important;
+        border-radius: 8px !important;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.05) !important;
+    }
+
+    .content .main_content .left .achievements,
+    .content .main_content .left .team,
+    .content .main_content .left .recruit {
+        width: 100% !important;
+        margin: 0 0 8px 0 !important;
+        height: 30px !important;
+        line-height: 30px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: #1e3a8a !important;
+        background: #eff6ff !important;
+        border-radius: 4px !important;
+        padding-left: 8px !important;
+        text-align: left !important;
+    }
+
+    .content .main_content .left ul {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .content .main_content .left li:not(.achievements_son):not(.achievements):not(.team):not(.recruit) {
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        line-height: normal !important;
+    }
+
+    .content .main_content .left li:not(.achievements_son) a {
+        padding: 5px 10px !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        border-radius: 4px !important;
+        background-color: #f1f5f9 !important;
+        color: #334155 !important;
+        display: inline-block !important;
+        text-align: center !important;
+    }
+
+    .content .main_content .left li:not(.achievements_son) a.selected,
+    .content .main_content .left li:not(.achievements_son) .selected {
+        background-color: #2563eb !important;
+        color: #ffffff !important;
+    }
+
+    /* 年份标签(.achievements_son)精美时间轴栅格化 (5列均分排列) */
+    .content .main_content .left .achievements_son {
+        display: inline-block !important;
+        width: calc(20% - 4px) !important;
+        min-width: 0 !important;
+        height: 26px !important;
+        line-height: 26px !important;
+        margin: 2px !important;
+        padding: 0 !important;
+        background: transparent !important;
+    }
+
+    .content .main_content .left .achievements_son a {
+        display: block !important;
+        width: 100% !important;
+        height: 26px !important;
+        line-height: 24px !important;
+        padding: 0 !important;
+        font-size: 12px !important;
+        border-radius: 4px !important;
+        background-color: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        color: #64748b !important;
+        text-align: center !important;
+    }
+
+    .content .main_content .left .achievements_son a.selected,
+    .content .main_content .left .achievements_son .selected {
+        background-color: #3b82f6 !important;
+        color: #ffffff !important;
+        border-color: #2563eb !important;
+    }
+
+    /* 正文内容卡片：解除固定尺寸，取消overflow:hidden */
+    .content .main_content .right {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        border-left: none !important;
+        padding: 14px 10px !important;
+        background: #ffffff !important;
+        border-radius: 8px !important;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.05) !important;
+        overflow: visible !important;
+    }
+
+    .content .main_content .right .top,
+    .content .main_content .right .topzhuanli {
+        width: 100% !important;
+        height: auto !important;
+        line-height: normal !important;
+        text-align: left !important;
+        margin: 0 0 12px 0 !important;
+        padding: 0 0 6px 0 !important;
+        border-left: none !important;
+        border-bottom: 2px solid #2563eb !important;
+    }
+
+    .content .main_content .right .top h2,
+    .content .main_content .right .topzhuanli h2,
+    .content .main_content .right .h2 {
+        font-size: 17px !important;
+        font-weight: 700 !important;
+        color: #1e3a8a !important;
+        margin: 0 !important;
+    }
+
+    .content .main_content .right .bottom,
+    .content .main_content .right .bottomjijin {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        border-left: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 论文、专利和项目条目：标准英文断行排版，永不截断 */
+    .content .main_content .right .bottom .lunwenStyle,
+    .content .main_content .right .bottom:not(.bottom_biye):not(.grid_img) a,
+    .content .main_content .right .bottomjijin a {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        font-size: 13.5px !important;
+        font-weight: 600 !important;
+        line-height: 1.55 !important;
+        margin: 14px 0 4px 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        text-indent: 0 !important;
+        color: #1e293b !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        white-space: normal !important;
+    }
+
+    /* 移动端已毕业学生条目自适应卡片 */
+    .content .main_content .right .bottom_biye a,
+    .content .main_content .right .bottom.bottom_biye a {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 12px 14px !important;
+        margin: 0 0 10px 0 !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-left: 4px solid #2563eb !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+        box-sizing: border-box !important;
+        text-decoration: none !important;
+    }
+
+    .content .main_content .right .bottom_biye a p,
+    .content .main_content .right .bottom.bottom_biye a p {
+        margin: 2px 0 !important;
+        padding: 0 !important;
+        text-align: left !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        width: 100% !important;
+    }
+
+    .content .main_content .right .bottom_biye a p:first-child,
+    .content .main_content .right .bottom.bottom_biye a p:first-child {
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        color: #1e3a8a !important;
+        margin-bottom: 4px !important;
+    }
+
+    .content .main_content .right .bottom_biye a p:nth-child(2),
+    .content .main_content .right .bottom.bottom_biye a p:nth-child(2) {
+        color: #2563eb !important;
+        font-weight: 600 !important;
+        font-size: 12.5px !important;
+    }
+
+    .content .main_content .right .bottom_biye a p:last-child,
+    .content .main_content .right .bottom.bottom_biye a p:last-child {
+        text-align: left !important;
+        color: #64748b !important;
+        font-size: 12px !important;
+    }
+
+    .content .main_content .right .bottom div,
+    .content .main_content .right .bottom .journal,
+    .content .main_content .right .bottom .DOI {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 3px 0 !important;
+        font-size: 12.5px !important;
+        line-height: 1.5 !important;
+        text-indent: 0 !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        white-space: normal !important;
+        color: #475569 !important;
+    }
+
+    .content .main_content .right .bottom .DOI {
+        color: #2563eb !important;
+        word-break: break-all !important;
+        padding-bottom: 8px !important;
+        margin-bottom: 8px !important;
+        border-bottom: 1px dashed #e2e8f0 !important;
+    }
+
+    /* 新闻动态列表：清除原 CSS 带来的 margin-left: 35px 与 width: 103% */
+    .content .main_content .right .bottom ul {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .content .main_content .right .bottom li {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 40px !important;
+        margin: 8px 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 6px 0 !important;
+        background: transparent !important;
+        border-bottom: 1px dashed #e2e8f0 !important;
+        list-style: none !important;
+    }
+
+    .content .bottom a p,
+    .content .bottom a span {
+        float: none !important;
+        display: block !important;
+        width: 100% !important;
+        margin: 2px 0 !important;
+        padding: 0 !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .content .bottom a span {
+        font-size: 12px !important;
+        color: #94a3b8 !important;
+    }
+
+    /* 成员网格列表：2列紧凑自适应卡片 */
+    .content .main_content .right .grid_img,
+    .content .main_content .right .bottom.grid_img,
+    .grid_img {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 8px 0 !important;
+        padding: 0 !important;
+        border-left: none !important;
+    }
+
+    .content .main_content .right .grid_img a,
+    .content .main_content .right .bottom.grid_img a,
+    .grid_img a {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        margin-top: 0 !important;
+        padding: 10px 4px !important;
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 8px !important;
+        text-decoration: none !important;
+    }
+
+    .content .main_content .right .grid_img a img,
+    .content .main_content .right .grid_img img,
+    .content .main_content .right .bottom.grid_img img,
+    .grid_img a img {
+        position: static !important;
+        display: block !important;
+        width: 105px !important;
+        height: 140px !important;
+        max-width: 85% !important;
+        max-height: 140px !important;
+        object-fit: cover !important;
+        border-radius: 6px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.08) !important;
+    }
+
+    .content .main_content .right .grid_img a p,
+    .content .main_content .right .grid_img p,
+    .content .main_content .right .bottom.grid_img p,
+    .grid_img a p {
+        position: static !important;
+        display: block !important;
+        width: 100% !important;
+        margin: 8px 0 0 0 !important;
+        margin-top: 8px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: #1e293b !important;
+        text-align: center !important;
+        line-height: 1.3 !important;
+        padding: 0 !important;
+    }
+
+    /* 师生个人详情页 (刘爱萍教授等介绍) */
+    .content .main_content .right .student,
+    .student, .content .pic {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 8px 0 !important;
+        padding: 0 !important;
+    }
+
+    .content .main_content .right .student img,
+    .student p img, .student img {
+        position: static !important;
+        display: block !important;
+        margin: 8px auto 14px auto !important;
+        width: 150px !important;
+        max-width: 65% !important;
+        height: auto !important;
+        border-radius: 8px !important;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.12) !important;
+    }
+
+    .content .main_content .right .student p,
+    .student p {
+        width: 100% !important;
+        margin: 6px 0 !important;
+        padding: 0 !important;
+        text-indent: 2em !important;
+        font-size: 14px !important;
+        line-height: 1.8 !important;
+        color: #334155 !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        text-align: justify !important;
+    }
+
+    .content .main_content .right .student h3,
+    .content .main_content .right .student h2 {
+        text-align: center !important;
+        margin: 8px 0 !important;
+        font-size: 17px !important;
+        font-weight: bold !important;
+    }
+
+    /* 分页条控件 (重置绝对定位) */
+    .content .main_content .right .change_page {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 16px 0 6px 0 !important;
+        padding: 8px 0 !important;
+        border-top: 1px solid #e5e7eb !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .content .main_content .right .change_page div {
+        width: 100% !important;
+    }
+
+    .content .main_content .right .change_page ul {
+        display: flex !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .content .main_content .right .change_page li {
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        width: 32px !important;
+        height: 32px !important;
+        line-height: 32px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 4px !important;
+        background: #ffffff !important;
+        margin: 0 !important;
+    }
+
+    .content .main_content .right .change_page li a {
+        width: 100% !important;
+        height: 100% !important;
+        line-height: 32px !important;
+        text-align: center !important;
+        font-size: 13px !important;
+        color: #334155 !important;
+    }
+
+    .content .main_content .right .change_page li.selected,
+    .content .main_content .right .change_page .selected {
+        background-color: #2563eb !important;
+        border-color: #2563eb !important;
+    }
+
+    .content .main_content .right .change_page li.selected a,
+    .content .main_content .right .change_page .selected a {
+        color: #ffffff !important;
+    }
+
+    /* 移动端招生网格与仪器设备网格单列优雅堆叠 */
+    .recruit-grid,
+    .content .main_content .right .bottom div[style*="grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    /* 移动端禁用滚动吸顶JS的定位破坏 */
+    .leffix {
+        position: static !important;
+        width: 100% !important;
+        top: auto !important;
+        animation: none !important;
+    }
+
+    .nav.fix {
+        position: static !important;
+        width: 100% !important;
+        left: auto !important;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    .nav2, .lef2 {
+        margin-top: 0 !important;
+    }
+
+    /* 5. 首页单列上下排布，彻底消除左右两半撕裂 */
+    .index_row_section {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-top: 8px !important;
+    }
+
+    .col_home, .col_about, .col_news, .col_gallery {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 标题小横条 */
+    .all_title {
+        display: block !important;
+        width: 92% !important;
+        margin: 15px auto 6px auto !important;
+    }
+
+    .homepage_title, .about_us, .news {
+        width: 100% !important;
+        height: 32px !important;
+        margin: 0 !important;
+        border-bottom: 1px solid #d1d5db !important;
+    }
+
+    .homepage_title p, .about_us p, .news p {
+        width: auto !important;
+        height: 32px !important;
+        display: inline-block !important;
+        border-bottom: 2px solid #2563eb !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: #1f2937 !important;
+        padding-right: 12px !important;
+        margin: 0 !important;
+    }
+
+    /* 轮播图模块 */
+    .banners {
+        position: relative !important;
+        left: 0 !important;
+        width: 92% !important;
+        max-width: 100% !important;
+        height: 220px !important;
+        margin: 8px auto 14px auto !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+    }
+
+    .banners img {
+        width: 100% !important;
+        height: 220px !important;
+        object-fit: cover !important;
+        border-radius: 8px !important;
+    }
+
+    .images {
+        height: 220px !important;
+        max-width: none !important;
+    }
+
+    /* 课题组简介正文 */
+    .about_us_content {
+        position: static !important;
+        width: 92% !important;
+        height: auto !important;
+        margin: 8px auto 20px auto !important;
+        text-indent: 2em !important;
+    }
+
+    .about_us_content p {
+        font-size: 15px !important;
+        line-height: 1.8 !important;
+        color: #374151 !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* 实验室动态新闻列表 */
+    .bannersall.new__ {
+        position: static !important;
+        width: 92% !important;
+        height: auto !important;
+        margin: 8px auto !important;
+        overflow: visible !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .new__ ul {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .new__ li {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 0 10px 0 !important;
+        padding: 8px 0 !important;
+        line-height: 1.5 !important;
+        list-style: none !important;
+        border-bottom: 1px dashed #e5e7eb !important;
+        background: transparent !important;
+    }
+
+    .new__ a {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+        font-size: 14px !important;
+        color: #1f2937 !important;
+    }
+
+    .new__ p {
+        width: 100% !important;
+        white-space: normal !important;
+        line-height: 1.5 !important;
+        margin: 0 0 4px 0 !important;
+    }
+
+    .new__ span {
+        margin: 0 !important;
+        font-size: 12px !important;
+        color: #9ca3af !important;
+    }
+
+    /* 课余生活相册预览卡片 */
+    #previewContainer {
+        width: 92% !important;
+        max-width: 360px !important;
+        height: 200px !important;
+        margin: 10px auto 25px auto !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
+    }
+
+    /* 6. 页脚Tail移动端整齐居中，消除重叠 */
+    .tail {
+        width: 100% !important;
+        margin-top: 30px !important;
+        padding: 20px 15px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        background-color: #2a6dbb !important;
+    }
+
+    .tail .logo {
+        margin: 0 0 12px 0 !important;
+    }
+
+    .tail .logo img {
+        height: 55px !important;
+        width: auto !important;
+    }
+
+    .tail .info {
+        margin: 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+        font-size: 12px !important;
+        line-height: 1.6 !important;
+    }
+
+    .tail .info p, .tail .info a {
+        margin: 3px 0 !important;
+        margin-left: 0 !important;
+        font-size: 12px !important;
+        word-break: break-all !important;
+    }
+
+    /* 7. AI 助手悬浮挂件手机端优化 */
+    #ai-float-button {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    #ai-chat-window {
+        width: calc(100vw - 20px) !important;
+        right: 10px !important;
+        bottom: 78px !important;
+        height: 500px !important;
+        max-height: 75vh !important;
+    }
+}

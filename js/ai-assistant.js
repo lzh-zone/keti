@@ -11,6 +11,8 @@ const SECURITY = {
 
 // 配置
 const CONFIG = {
+    // 默认模型为 Qwen 3.8
+    model: '@cf/qwen/qwen3.8-27b',
     // 使用 Cloudflare Worker 代理(API Token 已在 Worker 中配置)
     apiUrl: 'https://api.yes.lzh1.eu.org/',
     systemPrompt: '你是一个友好且专业的学术助手,专门帮助用户了解浙江理工大学刘爱萍教授团队的研究工作。团队主要研究智能传感与驱动,包括智能传感材料的设计与制备、传感器件的微型化和集成化等。请用简体中文回答问题,保持专业且友好的语气。请提供完整、详细的回答,不要中途截断。'
@@ -338,9 +340,9 @@ async function callAI(messages) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-                // Authorization 已在 Worker 中配置,不需要在前端发送
             },
             body: JSON.stringify({
+                model: CONFIG.model,
                 messages: fullMessages,
                 max_tokens: 1024,
                 temperature: 0.7,
@@ -359,23 +361,26 @@ async function callAI(messages) {
         const data = await response.json();
         console.log('API 响应数据:', data);
 
-        // 根据 Cloudflare AI API 的响应格式提取回复
-        // 尝试多种可能的响应格式
+        // 根据 Cloudflare AI API 的响应格式提取回复（兼容 Qwen 3.8 与 OpenAI 规范）
         let aiResponse = null;
 
-        if (data.result && data.result.response) {
-            aiResponse = data.result.response;
-        } else if (data.result && typeof data.result === 'string') {
-            aiResponse = data.result;
-        } else if (data.response) {
-            aiResponse = data.response;
+        if (data.result && data.result.choices && data.result.choices[0] && data.result.choices[0].message) {
+            aiResponse = data.result.choices[0].message.content;
         } else if (data.choices && data.choices[0] && data.choices[0].message) {
             aiResponse = data.choices[0].message.content;
+        } else if (data.result && data.result.response) {
+            aiResponse = data.result.response;
+        } else if (data.response) {
+            aiResponse = data.response;
+        } else if (data.result && typeof data.result === 'string') {
+            aiResponse = data.result;
         } else if (data.content) {
             aiResponse = data.content;
         }
 
         if (aiResponse) {
+            // 清理可能包含的思考标签（如 <think>...</think>）
+            aiResponse = aiResponse.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
             console.log('提取的 AI 回复:', aiResponse);
             return aiResponse;
         } else {

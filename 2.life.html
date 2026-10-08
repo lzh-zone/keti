@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>浙江理工大学——课余生活</title>
     <link rel="icon" href="images/logo_24x24.ico" type="image/x-icon">
     <link rel="shortcut icon" href="images/logo_24x24.ico" type="image/x-icon">
@@ -122,13 +122,14 @@
 
     
     
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <!-- 1、header部分 -->
     <div class="header">
         <div class="logo">
-            <a href="1.index.html">
-                <img src="images/logo_2.png" height="120" alt="">
+            <a href="index.html">
+                <img src="images/logo_2.png" height="120" alt="浙江理工大学刘爱萍课题组">
             </a>
         </div>
         <div class="school">
@@ -140,16 +141,16 @@
     <!-- 2、导航部分 -->
     <div class="nav" id="nav__">
         <ul>
-            <li><a href="./index.html">首页</a></li>
+            <li><a href="index.html" id="nav-item-home">首页</a></li>
             <li class="down_list">
-                <a href="2.news.html">新闻中心</a>
+                <a href="2.news.html" id="nav-item-news" class="selected">新闻中心</a>
                 <ul>
                     <li><a href="2.news.html">实验室动态</a></li>
-                    <li><a href="2.life.html" class="selected">课余生活</a></li>
+                    <li><a href="2.life.html">课余生活</a></li>
                 </ul>
             </li>
             <li class="down_list">
-                <a href="3.team_intro.html">研究团队</a>
+                <a href="3.team_intro.html" id="nav-item-team">研究团队</a>
                 <ul>
                     <li><a href="3.1.team_intro_teachers.html">团队老师</a></li>
                     <li><a href="3.2.team_intro_boshi.html">博士研究生</a></li>
@@ -158,16 +159,16 @@
                 </ul>
             </li>
             <li class="down_list">
-                <a href="4.accademic_achievements.html">学术成果</a>
+                <a href="4.accademic_achievements.html" id="nav-item-achieve">学术成果</a>
                 <ul>
                     <li><a href="4.1.2026.html">论文</a></li>
                     <li><a href="4.2.faming_1.html">专利</a></li>
                     <li><a href="4.3.jijin.html">科研项目</a></li>
                 </ul>
             </li>
-            <li><a href="#">实验室资源</a></li>
+            <li><a href="5.resource.html" id="nav-item-resource">实验室资源</a></li>
             <li class="down_list">
-                <a href="6.recruit_students.html">招生/招聘信息</a>
+                <a href="6.recruit_students.html" id="nav-item-recruit">招生/招聘信息</a>
                 <ul>
                     <li><a href="6.1.recruit_shuoshi.html">硕士研究生</a></li>
                     <li><a href="6.2.recruit_boshi.html">博士研究生</a></li>
@@ -180,7 +181,7 @@
     <div class="content">
         <div class="title">
             <img src="images/icon1.png" alt="">
-            <a class="main" href="1.index.html">首页</a>
+            <a class="main" href="index.html">首页</a>
             <span>></span>
             <a href="2.life.html">课余生活</a>
         </div>
@@ -206,8 +207,8 @@
     <!-- 5、尾部 -->
     <div class="tail">
         <div class="logo">
-            <a href="1.index.html">
-                <img src="images/logo_2.png" height="120" alt="">
+            <a href="index.html">
+                <img src="images/logo_2.png" height="120" alt="浙江理工大学刘爱萍课题组">
             </a>
         </div>
         <div class="info">
@@ -215,36 +216,6 @@
             <p>邮 编：310018</p>
             <p>电子邮箱: aipingwz@163.com</p>
             <a href="https://beian.miit.gov.cn/" target="_blank">备案号：豫ICP备2024068696号</a>
-        </div>
-    </div>
-    <!-- PhotoSwipe Core HTML -->
-    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div>
-                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                    <button class="pswp__button pswp__button--share" title="Share"></button>
-                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                          <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
         </div>
     </div>
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>

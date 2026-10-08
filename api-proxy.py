@@ -10,8 +10,11 @@ import json
 import urllib.request
 import urllib.error
 
-API_URL = 'https://api.cloudflare.com/client/v4/accounts/371438b5dba15161c6ef55a3884a1c7b/ai/run/@cf/meta/llama-3-8b-instruct'
-API_TOKEN = 'yO9DSWAzOBGOQ189KUUB45dFNLhli05vtQtQPi5T'
+import os
+
+ACCOUNT_ID = os.environ.get('CF_ACCOUNT_ID', '371438b5dba15161c6ef55a3884a1c7b')
+API_URL = f'https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/ai/run/@cf/qwen/qwen3.8-27b'
+API_TOKEN = os.environ.get('CF_API_TOKEN', 'yO9DSWAzOBGOQ189KUUB45dFNLhli05vtQtQPi5T')
 
 class CORSRequestHandler(SimpleHTTPRequestHandler):
     def end_headers(self):

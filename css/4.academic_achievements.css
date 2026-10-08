@@ -1,3 +1,4 @@
+﻿@import url('responsive.css');
 /* 清除默认边距 */
 *{  /* 全局选择器 */
     margin: 0;
@@ -14,10 +15,11 @@ li{
 }
 /* 以下代码保证了在页面缩小时不会因元素的浮动而造成元素变形 */
 body{
-    width: 1500px;
+    width: 100%;
+    max-width: 1500px;
     margin: 0 auto;
-    height: 1150px;
-    min-width: 1200px;
+    min-height: 800px;
+    min-width: 0;
 }
 
 
@@ -178,15 +180,17 @@ body{
     margin: 0 auto;
 }
 
+@media screen and (min-width: 993px) {
 .content .title{
     position: absolute;
     top: 160px;
-    width: 1200px;
+    width: 100%; max-width: 1200px;
     height: 55px;
     line-height: 55px;
     border-bottom: 2px solid #ffb64d;
     font-size: 15px;
     z-index: 3;
+}
 }
 .content .title img{
     position: absolute;
@@ -256,17 +260,21 @@ body{
 
 
 
+@media screen and (min-width: 993px) {
 .content .main_content{
     position:absolute;
     width: 79%;
     z-index: 0;
 }
+}
 
+@media screen and (min-width: 993px) {
 .content .main_content .right{
     position: absolute;
     top: 75px;
     left: 240px;
-    width: 970px;
+    width: 100%; max-width: 970px;
+}
 }
 
 .content .main_content .right .top{
@@ -293,35 +301,35 @@ body{
 
 .content .main_content .right .bottom{
     width: 100%;
-    height: 1108px;
+    min-height: 400px; height: auto;
     border-left: 1px dashed #eee;
 }
 .content .main_content .right .bottomjijin{
     width: 100%;
-    height: 1108px;
+    min-height: 400px; height: auto;
     border-left: 1px dashed #eee;
 }
 .content .main_content .right .bottom a{
     display: block;  /* 将其变为块级元素 */
     width: 100%;
-    height: 100px;
-    margin: -30px 0 -5px 0;
-    padding-left: 11px;
+    min-height: 40px; height: auto;
+    margin: 10px 0 5px 0;
+    padding-left: 0;
     font-size: 14px;
     font-family: 微软雅黑;
-    text-indent: 3mm;  /* 给文字加首行缩进 */
+    text-indent: 0;  /* 给文字加首行缩进 */
     line-height: 25px;  /* 行间距 */
     color: #666666;
 }
 .content .main_content .right .bottomjijin a{
     display: block;  /* 将其变为块级元素 */
     width: 100%;
-    height: 100px;
-    margin: -50px 0 -5px 0;
-    padding-left: 11px;
+    min-height: 40px; height: auto;
+    margin: 10px 0 5px 0;
+    padding-left: 0;
     font-size: 14px;
     font-family: 微软雅黑;
-    text-indent: 3mm;  /* 给文字加首行缩进 */
+    text-indent: 0;  /* 给文字加首行缩进 */
     line-height: 25px;  /* 行间距 */
     color: #666666;
 }
@@ -396,10 +404,10 @@ body{
 }
 .content .main_content .right .bottom .lunwenStyle{
     display: block;  /* 将其变为块级元素 */
-    width: 98%;
-    height: 65px;
-    margin: 40px 0 -5px 0;
-    padding-left: 11px;
+    width: 100%;
+    min-height: 40px; height: auto;
+    margin: 14px 0 5px 0;
+    padding-left: 0;
     font-size: 17px;
     font-family: 微软雅黑;
     text-indent: 0;
@@ -412,12 +420,12 @@ body{
     margin-top: 5px;
 } 
 .content .main_content .right .bottom div{
-    padding-left: 11px;
+    padding-left: 0;
     font-size: 13px;
 }
 .content .main_content .right .bottom .journal{
     color: #0000008A;
-    padding-left: 11px;
+    padding-left: 0;
     margin: 4px 0 0 0;
     font-size: 13px;
 }
@@ -497,3 +505,5 @@ body{
     text-decoration: none;
     margin-left: 7%;
 }
+
+/* 引入统一响应式适配样式 */

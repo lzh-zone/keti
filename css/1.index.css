@@ -1,3 +1,4 @@
+﻿@import url('responsive.css');
 /* 清除默认边距 */
 *{  /* 全局选择器 */
     margin: 0;
@@ -10,10 +11,11 @@ a{
 }
 /* 以下代码保证了在页面缩小时不会因元素的浮动而造成元素变形 */
 body{
-    width: 1500px;
+    width: 100%;
+    max-width: 1500px;
     margin: 0 auto;
-    height: 1160px;
-    min-width: 1200px;
+    min-height: 800px;
+    min-width: 0;
 }
 
 
@@ -233,10 +235,11 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    width: 700%;
+    display: flex; flex-wrap: nowrap; width: max-content;
 }
 /* 对图片使用浮动 使其排列在一行*/
-.images li{
+.images li {
+    flex-shrink: 0;
     float: left;
 }
 /* 图片大小会撑大盒子,设置图片大小 */
@@ -455,3 +458,5 @@ body{
     text-decoration: none;
     margin-left: 7%;
 }
+
+/* 引入统一响应式适配样式 */

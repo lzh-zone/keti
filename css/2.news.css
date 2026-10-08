@@ -1,3 +1,4 @@
+﻿@import url('responsive.css');
 /* 清除默认边距 */
 *{  /* 全局选择器 */
     margin: 0;
@@ -10,10 +11,11 @@ a{
 }
 /* 以下代码保证了在页面缩小时不会因元素的浮动而造成元素变形 */
 body{
-    width: 1500px;
+    width: 100%;
+    max-width: 1500px;
     margin: 0 auto;
-    height: 800px;
-    min-width: 1200px;
+    min-height: 800px;
+    min-width: 0;
 }
 
 
@@ -170,19 +172,21 @@ body{
 
 .content{
     width: 80%;
-    height: 992px;
+    min-height: 400px; height: auto;
     /* background-color: antiquewhite; */
     margin: 0 auto;
 }
+@media screen and (min-width: 993px) {
 .content .title{
     position: absolute;
     top: 160px;
-    width: 1200px;
+    width: 100%; max-width: 1200px;
     height: 55px;
     line-height: 55px;
     border-bottom: 2px solid #ffb64d;
     font-size: 15px;
     z-index: 3;
+}
 }
 .content img{
     position: absolute;
@@ -237,19 +241,23 @@ body{
 
 
 
+@media screen and (min-width: 993px) {
 .content .main_content{
     position:absolute;
     width: 79%;
     z-index: 0;
 }
+}
+@media screen and (min-width: 993px) {
 .content .main_content .right{
     position: absolute;
     top: 90px;
     left: 240px;
 }
+}
 
 .content .main_content .right .top{
-    width: 107%;
+    width: 100%;
     height: 80px;
     line-height: 80px;
     text-align: center;
@@ -264,7 +272,7 @@ body{
 
 .content .main_content .right .bottom{
     width: 100%;
-    height: 740px;
+    min-height: 400px; height: auto;
     border-left: 1px dashed #eee;
 }
 .content .main_content .right .bottom a{
@@ -286,9 +294,9 @@ body{
 }
 .content .main_content .right .bottom li{
     list-style:circle;
-    margin: 7px 0 7px 35px;
+    margin: 7px 0;
     height: 40px;
-    width: 103%;
+    width: 100%;
     background-color: #ffffff;
     text-align:left;
     line-height: 40px;
@@ -368,3 +376,5 @@ body{
     text-decoration: none;
     margin-left: 7%;
 }
+
+/* 引入统一响应式适配样式 */

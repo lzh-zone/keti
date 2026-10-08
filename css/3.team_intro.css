@@ -1,3 +1,4 @@
+﻿@import url('responsive.css');
 /* 清除默认边距 */
 *{  /* 全局选择器 */
     margin: 0;
@@ -10,10 +11,11 @@ a{
 }
 /* 以下代码保证了在页面缩小时不会因元素的浮动而造成元素变形 */
 body{
-    width: 1500px;
+    width: 100%;
+    max-width: 1500px;
     margin: 0 auto;
-    height: 800px;
-    min-width: 1200px;
+    min-height: 800px;
+    min-width: 0;
 }
 
 
@@ -171,19 +173,21 @@ body{
 
 .content{
     width: 80%;
-    height: 1200px;
+    min-height: 500px; height: auto;
     /* background-color: antiquewhite; */
     margin: 0 auto;
 }
+@media screen and (min-width: 993px) {
 .content .title{
     position: absolute;
     top: 160px;
-    width: 1200px;
+    width: 100%; max-width: 1200px;
     height: 55px;
     line-height: 55px;
     border-bottom: 2px solid #ffb64d;
     font-size: 15px;
     z-index: 3;
+}
 }
 .content img{
     position: absolute;
@@ -237,16 +241,20 @@ body{
     transition: .3s;
 }
 
+@media screen and (min-width: 993px) {
 .content .main_content{
     position:absolute;
     width: 79%;
     z-index: 0;
 }
+}
+@media screen and (min-width: 993px) {
 .content .main_content .right{
     position: absolute;
     top: 90px;
     left: 240px;
-    width: 960px;
+    width: 100%; max-width: 960px;
+}
 }
 
 .content .main_content .right .top{
@@ -264,14 +272,14 @@ body{
 }
 
 .content .main_content .right .bottom{
-    width: 92%;
-    height: 1064px;
+    width: 100%;
+    min-height: 400px; height: auto;
     border-left: 1px dashed #eee;
 }
 .content .main_content .right .bottom a{
     display: block;  /* 将其变为块级元素 */
     width: 100%;
-    height: 100px;
+    min-height: 40px; height: auto;
     margin: 8px 0 5px 0;
     padding-left: 11px;
     font-size: 21px;
@@ -293,17 +301,17 @@ body{
 .content .main_content .right .grid_img p{
     color: black;
     font-size: 14px;
-    margin: 210px 0px 0px 78px;
+    margin: 8px 0 0 0;
     transition: .3s;  /* 改变样式时的延迟时间 */
 }
 .content .main_content .right .grid_img p:hover{
     color: rgb(11, 108, 184);
 }
 .content .main_content .right .grid_img img {  
-    width: 92%; /* 根据需要调整或移除，如果图片需要固定大小则不要设置 */  
+    width: 100%; /* 根据需要调整或移除，如果图片需要固定大小则不要设置 */  
     height: auto; /* 保持图片宽高比 */  
-    margin-right: 15px;
-    margin-left: 31px;
+    margin-right: 0;
+    margin-left: 0;
     padding-left: 0px;
 }
 .content .main_content .right .student p{
@@ -314,7 +322,7 @@ body{
     line-height: 32px;
 }
 .content .main_content .right .student img{
-    margin-top: -390px;
+    margin-top: 10px;
     margin-left: 27%;
     /* text-align: center; */
 }
@@ -384,3 +392,5 @@ body{
     text-decoration: none;
     margin-left: 7%;
 }
+
+/* 引入统一响应式适配样式 */
